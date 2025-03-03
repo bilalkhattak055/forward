@@ -1,0 +1,157 @@
+.sign-input {
+    border: none !important;
+    border-bottom: 1px solid #1A3D6F !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    padding-left: 42px !important;
+    color: #184b93 !important;
+    font-size: 16px !important;
+}
+.sign-input:hover:focus {
+    outline: none !important;
+}
+.login-card {
+    max-width: 680px !important;
+    /* width: 500px; */
+    background-color: #F6F6F6 !important;
+}
+.login-page {
+    background-color: #F6F6F6 !important;
+    max-height: 100vw !important;
+
+}
+.login-main {
+    background-color: #F6F6F6 !important;
+    padding: 0 !important;
+
+}
+.login-tab {
+    background-color: #F6F6F6 !important;
+}
+.sign-btn {
+    background-color: #1A3D6F !important;
+    color: #fff;
+    padding: 12px !important;
+}
+
+.sign-btn:hover {
+    color: #fff !important;
+    background-color: #184b93 !important;
+}
+.form-Group {
+    position: relative;
+}
+
+.Email-icon {
+    position: absolute;
+    top: 14px;
+    left: 4px;
+    color: #184b93;
+}
+.margin-bottom-1 {
+    margin-bottom: 12px !important;
+}
+
+.forgot-password {
+    color: #184b93 !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: #184b93 !important;
+    text-decoration-thickness: 1px;
+
+}
+.optboxcss{
+    border: 1px solid grey !important;
+}
+.resetinputfieldsborder{
+    border-bottom: 1px solid black !important;
+    border-radius: 0px !important;
+}
+
+/* @media screen and(min-width: 600px) {
+    .login-card {
+        width: 400px !important;
+        min-width: 300px !important;
+    }
+} */
+
+.login-logo {
+    position: fixed;
+    top: 16px;
+    left: 10px;
+    width: 264px !important;
+}
+
+.PassLengthCheck{
+    color: green !important;
+}
+
+.login-new-design{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+    min-height: 100vh;
+    background: white;
+}
+.newlogin-design-heading{
+   text-align: center;
+   font-weight: 400;
+   font-size: 18px;
+   color: #013B68;
+   margin: 0px;
+}
+.newlogin-design-heading1{
+   text-align: center;
+   font-weight: 600;
+   font-size: 45px;
+   color: #013B68;
+}
+.submit-btn-new{ 
+    color:white;
+   background: #013A66;
+   border-radius: 8px;
+   padding: 8px;
+   border: 0px;
+   width: 100%;
+   font-weight: 700 !important;
+   font-size: 20px;
+}
+.login-new-desing-child2 {
+    height: 100vh;
+    width: 100%;
+    background: url('../assets/images/logo/Uni-New-Back.jpg');
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;   
+}
+
+/* .dummy-img{
+    width: 100%;
+    height: 61vh;
+    position: absolute; 
+    right: -150px;
+    top: 325px;
+} */
+
+.custom-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #013A66;
+    background-color: white;
+}
+.custom-scroll::-webkit-scrollbar {
+    width: 8px; 
+}
+.background-container {
+    background: url('../assets/images/logo/Uni-New-Back.jpg') center/contain no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative; 
+    padding: 20px;
+    background-size: 100% 100%;
+
+}
+.login-card-wrapper{
+    min-height: 700px !important;
+    overflow: auto !important;
+}
