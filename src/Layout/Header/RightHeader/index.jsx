@@ -52,8 +52,8 @@ console.log('current route', currentRoute)
           {/* <BookmarkHeader /> */}
           {/* <MoonLight /> */}
           {/* <CartHeader /> */}
-          {(currentRoute==='support' )?null:<DownloadButton />}
-          <Notificationbar totalNotifications={data?.length > 0 ? data?.length : ""} data={data}  />
+           {/*{(currentRoute==='support' )?null:<DownloadButton />}*/}
+          {/*<Notificationbar totalNotifications={data?.length > 0 ? data?.length : ""} data={data}  />*/}
           <UserHeader />
         </UL>
         {/* </Col> */}

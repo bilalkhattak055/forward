@@ -1,4 +1,4 @@
-import { BookOpen, Grid, Calendar, Book, Aperture, Settings, Users, MapPin, Cpu, Layers, HelpCircle, Video, Activity, Clipboard, UserCheck, Key, BarChart, Target,Award ,PieChart, Table,FileText} from 'react-feather';
+import { BookOpen, Grid,Home,Calendar,Layout,Book, Aperture, Settings, Users, MapPin, Cpu, Layers, HelpCircle, Video, Activity, Clipboard, UserCheck, Key, BarChart, Target,Award ,PieChart, Table,FileText} from 'react-feather';
  
 export const MENUITEMS = {
   'super-admin': [
@@ -39,16 +39,16 @@ export const MENUITEMS = {
             path: `${process.env.PUBLIC_URL}/dashboard/summary`,  icon: <FileText />,  title: "Summary",  activeTitle: 'summary',  type: "link" 
           },
         // { path: `${process.env.PUBLIC_URL}/dashboard/summary`, icon: <Grid />, title: "Summary", activeTitle: 'summary', type: "link" },
-        { path: `${process.env.PUBLIC_URL}/dashboard/default`, icon: <Grid />, title: "Live Analytics", activeTitle: 'default', type: "link" }, 
-        { path: `${process.env.PUBLIC_URL}/reports`, icon: <BarChart />, title: "AI Model & Reports", activeTitle: 'reports', type: "link" },
-        { path: `${process.env.PUBLIC_URL}/areaanalysis`, icon: <PieChart />, title: "Area Owner Analysis", activeTitle: 'areaanalysis', type: "link" },
-        { path: `${process.env.PUBLIC_URL}/sub-area-analysis`, icon: <Layers />, title: "Sub Area Analysis", activeTitle: 'sub-area-analysis', type: "link" },
-        { path: `${process.env.PUBLIC_URL}/targets`, icon: <Target />, title: "Targets & Controls", activeTitle: 'targets', type: "link" },
-        { path: `${process.env.PUBLIC_URL}/live_alerts`, icon: <Activity />, title: "Live Alerts", activeTitle: 'live_alerts', type: "link" },
-        { path: `${process.env.PUBLIC_URL}/camera_configuration`, icon: <Aperture />, title: "Camera Status", activeTitle: 'camera_configuration', type: "link" },
+        { path: `${process.env.PUBLIC_URL}/dashboard/default`, icon: <Home/>, title: "Dashboard", activeTitle: 'default', type: "link" }, 
+        { path: `${process.env.PUBLIC_URL}/history`, icon: <Grid/>, title: "History", activeTitle: 'history', type: "link" },
+        { path: `${process.env.PUBLIC_URL}/pages`, icon: <Layout/>, title: "Pages", activeTitle: 'pages', type: "link" },
+      //  { path: `${process.env.PUBLIC_URL}/sub-area-analysis`, icon: <Layers />, title: "Sub Area Analysis", activeTitle: 'sub-area-analysis', type: "link" },
+        //{ path: `${process.env.PUBLIC_URL}/targets`, icon: <Target />, title: "Targets & Controls", activeTitle: 'targets', type: "link" },
+        //{ path: `${process.env.PUBLIC_URL}/live_alerts`, icon: <Activity />, title: "Live Alerts", activeTitle: 'live_alerts', type: "link" },
+        //{ path: `${process.env.PUBLIC_URL}/camera_configuration`, icon: <Aperture />, title: "Camera Status", activeTitle: 'camera_configuration', type: "link" },
         // created by sheheryar
-        { path: `${process.env.PUBLIC_URL}/leaderboard`, icon: <Award />, title: "Leaderboard", activeTitle: 'leaderboard', type: "link" },
-        { path: `${process.env.PUBLIC_URL}/support`, icon: <HelpCircle />, title: "Support & Tickets", activeTitle: 'support', type: "link" },
+       // { path: `${process.env.PUBLIC_URL}/leaderboard`, icon: <Award />, title: "Leaderboard", activeTitle: 'leaderboard', type: "link" },
+       // { path: `${process.env.PUBLIC_URL}/support`, icon: <HelpCircle />, title: "Support & Tickets", activeTitle: 'support', type: "link" },
 
 
 

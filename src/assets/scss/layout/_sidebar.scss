@@ -1546,13 +1546,13 @@
                     vertical-align: -2px;
                     float: none;
                     transition: all 0.3s ease;
-                    color: black;
+                    color:#52526CCC;
                   }
 
                   span {
                     letter-spacing: 0.7px;
                     text-transform: capitalize;
-                    color: $black;
+                    color: #52526CCC;
                     width: 79%;
                   }
 
@@ -1652,24 +1652,24 @@
                     &:hover {
                       svg {
                         fill: rgba($primary-color, 0.1%);
-                        stroke: var(--theme-default);
+                        stroke:#00A04A;
                         transition: all 0.3s ease;
 
                         &.fill-icon {
-                          fill: var(--theme-default);
+                          fill:#00A04A;
                           stroke: none;
                         }
                       }
 
                       span {
-                        color: var(--theme-default);
+                        color: #00A04A;
                         transition: all 0.3s ease;
                         
                       }
 
                       .according-menu {
                         i {
-                          color: var(--theme-default);
+                          color:#00A04A;
                           transition: all 0.3s ease;
                         }
                       }
@@ -1931,33 +1931,33 @@
                     transition: all 0.5s ease;
                     position: relative;
                     margin-bottom: 10px;
-                    color: white;
-                    background-color: $primary-color;
+                    color:#335436;
+                    background-color: #02A25112;
 
                     .according-menu {
                       i {
-                        color: white;
+                        color:#335436;
                       }
                     }
 
                     svg {
-                      color: white;
+                      color:#335436;
                       // fill: white;
                     }
 
                     span {
-                      color: white;
-                      color: white;
+                      color: #335436;
+                      color:#335436;
                       transition: all 0.3s ease;
                     }
                     &.active:hover{
                       svg {
-                        color: black;
+                        color:#52526CCC;
                       }
 
                       .according-menu {
                         i {
-                          color: black;
+                          color: #52526CCC;
                         }
                       }
                       
@@ -1968,13 +1968,13 @@
                   &:hover {
                     svg {
                       &.stroke-icon {
-                        stroke: black;
+                        stroke: #52526CCC;
                         transition: all 0.3s ease;
                       }
                     }
 
                     span {
-                      color: $black;
+                      color: #52526CCC;
                     }
 
                   }

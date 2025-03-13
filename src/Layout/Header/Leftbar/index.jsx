@@ -8,7 +8,8 @@ import NotificationSlider from "./NotificationSlider";
 import { Button, ButtonGroup } from "reactstrap";
 import FactoryService from "../../../api/factoryService";
 import { errorToast, infoToast, showConfirmationAlert, successToast } from "../../../_helper/helper";
-import '../../Sidebar/side.css'
+import '../../Sidebar/side.css';
+import arrow from './arrow.svg'
 const Leftbar = () => {
   const { layoutURL, setToggleIcon, toggleSidebar, toggleIcon } =
     useContext(CustomizerContext);
@@ -68,71 +69,71 @@ const Leftbar = () => {
       }
     }
   };
-// for global feature -----------x--------------------x--------------
-const [activeButton, setActiveButton] = useState("ICF");
-const [selectedFactory, setSelectedFactory] = useState("");
-const [factoryList, setFactoryList] = useState([]);
+  // for global feature -----------x--------------------x--------------
+  const [activeButton, setActiveButton] = useState("ICF");
+  const [selectedFactory, setSelectedFactory] = useState("");
+  const [factoryList, setFactoryList] = useState([]);
 
-const handleButtonClick = (factoryName) => {
-  setActiveButton(factoryName);
-  handleFilterChangeNew(factoryName)
-};
-const fetchFactories = () => {
-  FactoryService.getAllFactories()
-    .then((res) => {
-      setFactoryList(res.data?.data);
-      const user = JSON.parse(localStorage.getItem("userData"));
-      setSelectedFactory(user ?user?.factory?.id: 0) 
-    })
-    .catch((e) => {});
-};
-const handleFilterChangeNew = (e) => {
-  // const val=parseInt(e.target.value)
- 
-  const selectedFactoryID= factoryList.find(item=>item.name==e);
-  const val=selectedFactoryID?.factory_id  
-  if(val !== 0){
-  var get_user_data=JSON.parse(localStorage.getItem('userData')) 
-  showConfirmationAlert("Are you sure you want to change your factory?","Yes")
-  .then((result) => {
-    if (result.value) {
-      const payload = {
-        user_id: get_user_data?.id,
-        factory_id: val,
-      };
-      setSelectedFactory(e);
-      FactoryService.updateUserFactory(payload)
-        .then((res) => {
-          if (res?.status === 200) {
-            successToast(res?.data?.message);
-            get_user_data.factory={ id:res?.data?.data?.factory_id, name:res?.data?.data?.factory_name}
-            localStorage.setItem('userData',JSON.stringify(get_user_data)) 
-            window.location.reload();
-            
-          } else {
-            infoToast(res?.data?.message);
+  const handleButtonClick = (factoryName) => {
+    setActiveButton(factoryName);
+    handleFilterChangeNew(factoryName)
+  };
+  const fetchFactories = () => {
+    FactoryService.getAllFactories()
+      .then((res) => {
+        setFactoryList(res.data?.data);
+        const user = JSON.parse(localStorage.getItem("userData"));
+        setSelectedFactory(user ? user?.factory?.id : 0)
+      })
+      .catch((e) => { });
+  };
+  const handleFilterChangeNew = (e) => {
+    // const val=parseInt(e.target.value)
+
+    const selectedFactoryID = factoryList.find(item => item.name == e);
+    const val = selectedFactoryID?.factory_id
+    if (val !== 0) {
+      var get_user_data = JSON.parse(localStorage.getItem('userData'))
+      showConfirmationAlert("Are you sure you want to change your factory?", "Yes")
+        .then((result) => {
+          if (result.value) {
+            const payload = {
+              user_id: get_user_data?.id,
+              factory_id: val,
+            };
+            setSelectedFactory(e);
+            FactoryService.updateUserFactory(payload)
+              .then((res) => {
+                if (res?.status === 200) {
+                  successToast(res?.data?.message);
+                  get_user_data.factory = { id: res?.data?.data?.factory_id, name: res?.data?.data?.factory_name }
+                  localStorage.setItem('userData', JSON.stringify(get_user_data))
+                  window.location.reload();
+
+                } else {
+                  infoToast(res?.data?.message);
+                }
+              })
+              .catch((err) => {
+                if (err?.status === 404) {
+                  errorToast(err?.statusText);
+                } else {
+                  errorToast(err?.response?.data?.message);
+                }
+              });
           }
         })
-        .catch((err) => {
-          if (err?.status === 404) {
-            errorToast(err?.statusText);
-          } else {
-            errorToast(err?.response?.data?.message);
-          }
-        });
+        .catch((error) => { });
     }
-  })
-  .catch((error) => {});
-} 
-};
+  };
 
-useEffect(() => {
-  setActiveButton(user?.factory?.name)
-  fetchFactories();
-}, [])
+  useEffect(() => {
+    setActiveButton(user?.factory?.name)
+    fetchFactories();
+  }, [])
 
   return (
-    <Fragment>
+    <Fragment >
       <Col className="header-logo-wrapper col-auto p-0 " id="out_side_click">
         <div className="logo-wrapper">
           <Link to={`${process.env.PUBLIC_URL}/dashboard/default`}>
@@ -168,11 +169,22 @@ useEffect(() => {
         </div>
       </Col>
       <Col sm="5" className="left-header p-0 d-none d-md-block" style={{ width: "fit-content" }}>
-        {/* <NotificationSlider /> */} 
+        {/* <NotificationSlider /> */}
+        {/*
        {user?.id==129?
         null
         :<H4 attrH4={{className: 'header-heading'}}>{role === 'it-officer' || role === 'super-admin' ? 'Industrial Safety AI Dashboard' : role === 'area' ? 'Area Safety AI Dashboard' :role=='global' ? 'Unilever Safety AI Dashboard' :  `${JSON.parse(localStorage.getItem('userData'))?.factory?.name || 'Unilever'} Safety AI Dashboard`}
         </H4>}
+        */}
+        <div className="d-flex align-items-center">
+          <span style={{ color: "#00A04A", fontWeight: "500", fontSize: "16px", marginRight: "8px" }}>
+            Don't Miss Out!
+          </span>
+          <span style={{ color: "#52526C", fontSize: "14px" }}>
+            Our new update has been released.
+          </span>
+          <span><img src={arrow} style={{width:"9px",height:"9px",marginLeft:"5px"}}/></span>
+        </div>
       </Col>
     </Fragment>
   );

@@ -24,10 +24,13 @@
     "bootstrap-scss": "^5.2.3",
     "chart.js": "^4.2.1",
     "chartjs-plugin-datalabels": "^2.2.0",
-    "concurrently": "^8.0.1",
+    "concurrently": "^8.2.2",
     "date-fns": "^2.29.3",
     "deni-react-treeview": "^1.1.11",
     "easymde": "^2.18.0",
+    "electron": "^35.0.0",
+    "electron-builder": "^25.1.8",
+    "electron-updater": "^6.3.9",
     "emoji-mart": "^5.5.2",
     "feather-icons": "^4.29.0",
     "file-saver": "^2.0.5",
@@ -110,18 +113,38 @@
     "styled-components": "^5.3.10",
     "sweetalert2": "^11.7.3",
     "tesseract.js": "^5.1.1",
+    "wait-on": "^8.0.2",
     "web-vitals": "^3.3.1",
     "world-map-geojson": "^1.0.2",
     "xlsx": "^0.18.5"
   },
+  "main": "public/electron.js",
   "scripts": {
-    "start": "react-scripts --max_old_space_size=4096 start",
-    "build": "react-scripts --max_old_space_size=8096 build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint --fix --ext .js,.jsx .",
-    "json-serve": "node public/server.js",
-    "start dev": "concurrently \"react-scripts start\" \"node public/server.js\""
+    "start": "react-scripts start",
+    "electron": "electron .",
+    "build": "react-scripts build"
+  },
+  "build": {
+    "appId": "com.forward.id",
+    "productName": "forward",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "sign": false,
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "bilalkhattak055",
+      "repo": "forward"
+    }
   },
   "resolutions": {
     "react-dev-utils": "10.0.0"

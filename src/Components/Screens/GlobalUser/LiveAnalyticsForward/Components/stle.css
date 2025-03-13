@@ -1,0 +1,139 @@
+.defect-card {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  margin: 0 auto;
+  border: none;
+}
+
+.defect-card-body {
+  padding: 20px;
+}
+
+.defect-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.defect-title {
+  color: #6b7280;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.defect-arrow {
+  color: #13A94E;
+  margin-right: 4px;
+}
+
+.defect-icon-container {
+  position: relative;
+}
+
+.defect-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #e8f5ec;
+  border-radius: 50%;
+}
+
+.defect-total {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 10px 0 10px 0;
+  line-height: 1;
+}
+
+.defect-categories {
+  margin-top: 10px;
+  position: relative;
+}
+
+.defect-category-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.defect-category-left {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.defect-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #d1d5db;
+  margin-right: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.defect-dot.active {
+  background-color: #13A94E;
+  border-color: #13A94E;
+}
+
+.defect-vertical-line {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: #d1d5db;
+  z-index: 1;
+}
+
+.defect-vertical-line.last {
+  height: 50%;
+  top: 0;
+}
+
+.defect-category-name {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.defect-category-name.active {
+  color: #13A94E;
+  font-weight: 500;
+}
+
+.defect-category-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Vertical line that connects all dots */
+.defect-categories:before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #d1d5db;
+  z-index: 1;
+}
+
+@media (max-width: 576px) {
+  .defect-card {
+    max-width: 100%;
+  }
+}

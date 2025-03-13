@@ -3,7 +3,7 @@ import { Grid } from 'react-feather';
 import { Link, useNavigate } from 'react-router-dom';
 import { Image } from '../../AbstractElements';
 import CubaIcon from '../../assets/images/logo/login-logo.svg';
-import uniIcon from '../../assets/images/logo/uni-logo.jpeg';
+import uniIcon from '../../assets/images/logo/forward.png';
 import CustomizerContext from '../../_helper/Customizer';
 import './side.css'
 import resyncState from '../../_helper/resync';
@@ -69,9 +69,9 @@ const SidebarLogo = () => {
     <div className='logo-wrapper new-logo-wrapper'>
       {layout1 !== 'compact-wrapper dark-sidebar' && layout1 !== 'compact-wrapper color-sidebar' && mixLayout ? (
         navigation ? (<div onClick={clickLogo} className='bilal'>
-          <Image  attrImage={{ className: 'img-fluid d-inline uni-logo', style: { height: '110px' }, src: `${role === 'factory' ? uniIcon : CubaIcon}`, alt: 'logo-main' }} />
+          <Image  attrImage={{ className: 'img-fluid d-inline uni-logo', style: { height: '110px',width:"100%" }, src: `${role === 'factory' ? uniIcon : CubaIcon}`, alt: 'logo-main' }} />
         </div>) : (<div>
-          <Image attrImage={{ className: 'img-fluid d-inline uni-logo', style: { height: '110px' }, src: `${role === 'factory' ? uniIcon : CubaIcon}`, alt: 'logo-main' }} />
+          <Image attrImage={{ className: 'img-fluid d-inline uni-logo', style: { height: '110px',width:"100%" }, src: `${role === 'factory' ? uniIcon : CubaIcon}`, alt: 'logo-main' }} />
         </div>)
       ) : (
         navigation ? (<div type='button' onClick={clickLogo} className=' d-flex justify-content-center'>

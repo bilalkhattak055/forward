@@ -41,6 +41,7 @@ import SupportAndTicketsScreenV2 from "../Components/Screens/GlobalUser/SupportA
 import CameraDashboard from '../Components/Screens/GlobalUser/CameraConfigurationV2/CameraDashboard'
 import TargetControl from '../Components/Screens/GlobalUser/Target and Controal V2/TargetControl'
 import LeaderBoardV2 from "../Components/Screens/GlobalUser/LeaderBoard V2/LeaderBoard"
+import LiveAnalyticsForward from "../Components/Screens/GlobalUser/LiveAnalyticsForward/LiveAnalyticsForward";
 
 //Company
 import FactoryDashboard from "../Components/Dashboards/CompanyDashbaord/Pages/FactoryDashboard";
@@ -138,10 +139,11 @@ export const routes = {
     // { path: `${process.env.PUBLIC_URL}/dashboard/V2`, Component: <LiveAnalyticsScreen /> },
     // { path: `${process.env.PUBLIC_URL}/dashboard/summary`, Component: <SummaryForGlobal /> },
     { path: `${process.env.PUBLIC_URL}/dashboard/summary`, Component: <SummaryForGlobal /> },
-    { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <LiveAnalyticsScreen /> },
+    //{ path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <LiveAnalyticsScreen /> },
+    { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <LiveAnalyticsForward /> },
     // { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <GlobalLiveAnalytics /> },
     { path: `${process.env.PUBLIC_URL}/dashboard/default/alerts`, Component: <HeatMapDetails /> },
-    { path: `${process.env.PUBLIC_URL}/reports`, Component: <GlobalAIReport /> },
+    { path: `${process.env.PUBLIC_URL}/history`, Component: <GlobalAIReport /> },
     { path: `${process.env.PUBLIC_URL}/moduleInfo`, Component: <ModuleTable /> },
     { path: `${process.env.PUBLIC_URL}/targets`, Component: <GlobalTargetAndControls /> },
     { path: `${process.env.PUBLIC_URL}/newtargets`, Component:<TargetControl /> },
@@ -159,7 +161,7 @@ export const routes = {
     { path: `${process.env.PUBLIC_URL}/leaderboard`, Component: <LeaderBoardV2 /> },
     { path: `${process.env.PUBLIC_URL}/newleaderboard`, Component: <LeaderBoardV2/> },
     // { path: `${process.env.PUBLIC_URL}/areaanalysis`, Component: <AreaAnalysis /> },
-    { path: `${process.env.PUBLIC_URL}/areaanalysis`, Component: <Area_Analysis_new /> },
+    { path: `${process.env.PUBLIC_URL}/pages`, Component: <Area_Analysis_new /> },
     { path: `${process.env.PUBLIC_URL}/areaanalysis/alerts/:id`, Component: <AreaAnalysisDetails /> },
     { path: `${process.env.PUBLIC_URL}/sub-area-analysis`, Component: <SubAreaAnalysis /> },
     { path: `${process.env.PUBLIC_URL}/sub-area-analysis/alerts`, Component: <SubAreaAnalysisDetails /> },
