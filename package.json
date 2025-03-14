@@ -30,7 +30,6 @@
     "date-fns": "^2.29.3",
     "deni-react-treeview": "^1.1.11",
     "easymde": "^2.18.0",
-    "electron": "^35.0.0",
     "electron-updater": "^6.3.9",
     "emoji-mart": "^5.5.2",
     "feather-icons": "^4.29.0",
@@ -186,6 +185,7 @@
     ]
   },
   "devDependencies": {
+    "electron": "^35.0.1",
     "electron-builder": "^25.1.8",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
