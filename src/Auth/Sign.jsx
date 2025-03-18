@@ -14,7 +14,8 @@ import Disrupt from './Disrupt.svg';
 import DesignTop from './DesignTop.svg';
 import DesignBottom from './DesignBottom.svg';
 import DesignBottom2 from './DesignBottom2.svg';
-import Axens1 from './forward.png';
+import Axens1 from './forward.png';//logo
+
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
