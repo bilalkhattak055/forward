@@ -75,11 +75,11 @@ export const errorToast = (message) =>
     Swal.fire({
       html: `<p class="disclaimer-text">${text}</p>`, // Use HTML to add custom styles
       icon: "info",
-      iconColor: "#1e67d6",
+      iconColor: "#00A04A",
       showCancelButton: false,
       cancelButtonText: "Cancel",
       reverseButtons: false,
-      cancelButtonColor: "#bd2130",
+      cancelButtonColor: "#00A04A",
       confirmButtonText: "Close",
       showConfirmButton: true,
     });
@@ -159,10 +159,10 @@ export const errorToast = (message) =>
     return  SweetAlert.fire({
       title: text,
       icon: "warning",
-      iconColor: "#bd2130",
+      iconColor: "#00A04A",
       cancelButtonText: 'Cancel',
       confirmButtonText: confirmText ? confirmText :'Delete',
-      cancelButtonColor: "#bd2130", 
+      cancelButtonColor: "#00A04A", 
       reverseButtons: true,
       showCancelButton: true,
       allowOutsideClick: true

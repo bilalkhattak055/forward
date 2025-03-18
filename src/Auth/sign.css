@@ -29,14 +29,15 @@
     background-color: #F6F6F6 !important;
 }
 .sign-btn {
-    background-color: #1A3D6F !important;
+    background-color:#00A04A !important;
     color: #fff;
     padding: 12px !important;
+    border: none;
 }
 
 .sign-btn:hover {
     color: #fff !important;
-    background-color: #184b93 !important;
+    background-color: #00A04A !important;
 }
 .form-Group {
     position: relative;

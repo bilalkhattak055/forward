@@ -143,8 +143,7 @@
     "publish": {
       "provider": "github",
       "owner": "bilalkhattak055",
-      "repo": "forward",
-      "private": true
+      "repo": "forward"
     }
   },
   "resolutions": {

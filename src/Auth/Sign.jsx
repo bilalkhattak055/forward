@@ -9,13 +9,12 @@ import api from '../api/api';
 import { isTokenExpired } from '../_helper/helper';
 import Enums from './Enum';
 import { Btn } from '../AbstractElements';
-import UnileverLogo from '../assets/images/logo/uni-New-Logo.png';
+import forward from '../assets/images/logo/forward.png';
 import Disrupt from './Disrupt.svg';
 import DesignTop from './DesignTop.svg';
 import DesignBottom from './DesignBottom.svg';
 import DesignBottom2 from './DesignBottom2.svg';
-import UnileverDashboard from '../assets/images/logo/dummy-login-img.jpg';
-import './sign.css'
+import Axens1 from './forward.png';
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -36,7 +35,8 @@ const useWindowSize = () => {
   }, []);
 
   return windowSize;
-}; 
+};
+
 const styles = {
   wrapper: {
     minHeight: '100vh',
@@ -46,17 +46,15 @@ const styles = {
     width: '100%',
     margin: 0,
     padding: 0,
-    position: 'relative',  
     overflow: 'hidden',
-  
-    '@media (max-height: 700px)': {
-      overflowY: 'auto', 
-      height: '100vh', 
-    },
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
-  
   leftPanel: (isMobile) => ({
-    backgroundColor: '#004377',
+    backgroundColor: '#00A04A',
     position: 'absolute',
     top: 0,
     left: 0,
@@ -73,21 +71,22 @@ const styles = {
     height: '100%',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    marginRight: 0,
+    justifyContent: 'flex-end', 
+    marginRight: 0, 
   },
   dashboardImage: {
     width: '90%',
     height: '90%',
     zIndex: 2,
-    filter: 'drop-shadow(-10px 0px 10px rgba(0, 0, 0, 0.40))',
-    objectFit: 'contain',
-    objectPosition: 'right',
+    filter: 'drop-shadow(-10px 0px 10px rgba(0, 0, 0, 0.40))', 
+    objectFit: 'contain', 
+    objectPosition: 'right', 
   },
   rightPanel: (isMobile) => ({
     display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center', 
     padding: isMobile ? '2rem 0' : '2rem',
     minHeight: '100vh',
     width: isMobile ? '100%' : '50%',
@@ -97,19 +96,24 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center', 
     width: '100%',
     maxWidth: '600px',
     padding: '0 15px',
+    marginTop: 'auto', 
+    marginBottom: 'auto',
   },
   logoTop: {
-    width: '150px',
-    height: '150px',
+    width: '200px',
+    height: 'auto',
+    marginBottom: '20px',
   },
   card: {
     width: '100%',
     maxWidth: '700px',
     backgroundColor: '#FFFFFF',
     boxShadow: 'none',
+    marginBottom: '20px', // Add spacing below the login card
   },
   passwordWrapper: {
     position: 'relative',
@@ -122,7 +126,16 @@ const styles = {
     cursor: 'pointer',
   },
   loaderContainer: {
-    width: '100%',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+    zIndex: 9999,
   },
   colorinput: {
     color: '#635470 !important',
@@ -205,16 +218,11 @@ export default function LoginPage() {
               state: { showToast: true },
             });
             break;
-            case Enums.AREA:
-              navigate(`${process.env.PUBLIC_URL}/dashboard/default/${Enums.AREA}`, {
-                state: { showToast: true },
-              });
-              break;
-              case Enums.IT:
-              navigate(`${process.env.PUBLIC_URL}/dashboard/default/${Enums.IT}`, {
-                state: { showToast: true },
-              });
-              break;
+          case Enums.AI:
+            navigate(`${process.env.PUBLIC_URL}/dashboard/defaultai/${Enums.AI}`, {
+              state: { showToast: true },
+            });
+            break;
           default:
             navigate(`${process.env.PUBLIC_URL}/dashboard/default/${Enums.DEFAULT}`, {
               state: { showToast: false },
@@ -234,98 +242,105 @@ export default function LoginPage() {
 
   return (
     <>
-      <div style={styles.wrapper}>
-        <div style={styles.leftPanel(isMobile)}>
-          <div style={styles.dashboardContainer}>
-            <img src={UnileverDashboard} alt="Axen1" style={styles.dashboardImage} />
-          </div>
-          <img src={DesignTop} alt="design" style={styles.DesignTop1} />
-          <img src={DesignTop} alt="design" style={styles.DesignTop2} />
-          <img src={DesignBottom} alt="design" style={styles.DesignBottom1} />
-          <img src={DesignBottom2} alt="design" style={styles.DesignBottom2} />
+      {loader ? (
+        <div style={styles.loaderContainer}>
+          <BarLoader color="#00A04A" />
         </div>
-        <div style={styles.rightPanel(isMobile)} className='login-card-wrapper' >
-          <div className='d-flex flex-column justify-content-between align-items-center w-100  h-100 '>
-            <img src={UnileverLogo} alt="Axen Logo" style={styles.logoTop} className='mb-4' />
+      ) : (
+        <div style={styles.wrapper}>
+          <div style={styles.leftPanel(isMobile)}>
+            <div style={styles.dashboardContainer}>
+              <img src={Axens1} alt="Axen1" style={styles.dashboardImage} />
+            </div>
+            <img src={DesignTop} alt="design" style={styles.DesignTop1} />
+            <img src={DesignTop} alt="design" style={styles.DesignTop2} />
+            <img src={DesignBottom} alt="design" style={styles.DesignBottom1} />
+            <img src={DesignBottom2} alt="design" style={styles.DesignBottom2} />
+          </div>
+
+          <div style={styles.rightPanel(isMobile)}>
             <div style={styles.contentWrapper}>
+              <img src={forward} alt="Axen Logo" style={styles.logoTop} />
+
               <Card style={styles.card}>
                 <CardBody>
                   <div className="text-left mb-2">
-                    <h2 style={{ textAlign: 'center', color: '#013B68', fontWeight: '700', fontSize: '35px' }}>Login</h2>
-                    <p style={{ textAlign: 'center', color: '#013B68', fontSize: '20px' }} className="mb-0">
+                    <h2 style={{ textAlign: 'center', color: '#00A04A' }}>Login</h2>
+                    <p style={{ textAlign: 'center', color: '#00A04A', fontSize: '20px' }} className="mb-2">
                       Welcome!
                     </p>
-                    <p style={{ textAlign: 'center', color: '#013B68', fontSize: '14px' }}>
-                      Please enter your credentials to proceed.
+                    <p style={{ textAlign: 'center', color: '#00A04A', fontSize: '16px' }}>
+                      Please sign in to your account
                     </p>
                   </div>
-                  {loader ? <div style={styles.loaderContainer} className='d-flex justify-content-center'>
-                    <BarLoader color="#635470" />
-                  </div> :
 
-                    <Form onSubmit={handleSubmit}>
-                      <FormGroup className="mb-1">
-                        <Label for="email" className="mb-1" style={{ color: '#212E84' }}>
-                          Email Address
-                        </Label>
+                  {error && (
+                    <Alert color="danger" className="mb-4">
+                      {error}
+                    </Alert>
+                  )}
+
+                  <Form onSubmit={handleSubmit}>
+                    <FormGroup className="mb-1">
+                      <Label style={{color: '#00A04A'}} for="email" className="mb-1">
+                        Email Address *
+                      </Label>
+                      <Input
+                        styles={styles.colorinput}
+                        id="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </FormGroup>
+
+                    <FormGroup className="mb-1">
+                      <Label style={{color: '#00A04A'}} for="password" className="mb-1">
+                        Password *
+                      </Label>
+                      <div style={styles.passwordWrapper}>
                         <Input
-                          styles={styles.colorinput}
-                          color="#635470"
-                          id="email"
-                          type="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="Enter your email"
+                          id="password"
+                          type={togglePassword ? 'text' : 'password'}
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                          placeholder="Enter your password"
                           required
                         />
-                      </FormGroup>
-
-                      <FormGroup className="mb-1" style={{ color: '#212E84' }}>
-                        <Label for="password" className="mb-1">
-                          Password
-                        </Label>
-                        <div style={styles.passwordWrapper}>
-                          <Input
-                            id="password"
-                            type={togglePassword ? 'text' : 'password'}
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Enter your password"
-                            required
-                          />
-                          <div
-                            style={styles.eyeIcon}
-                            onClick={() => setTogglePassword(!togglePassword)}
-                          >
-                            {togglePassword ? <Eye size={20} /> : <EyeOff size={20} />}
-                          </div>
+                        <div
+                          style={styles.eyeIcon}
+                          onClick={() => setTogglePassword(!togglePassword)}
+                        >
+                          {togglePassword ? <Eye size={20} /> : <EyeOff size={20} />}
                         </div>
-                      </FormGroup>
+                      </div>
+                    </FormGroup>
 
-                      {/* <div className="mb-1">
-                        <a href={`${process.env.PUBLIC_URL}/resetpassword`} style={{ color: '#212E84' }}>
-                          Forgot Password?
-                        </a>
-                      </div> */}
+                    <div className="mb-1">
+                      <a href={`${process.env.PUBLIC_URL}/resetpassword`} style={{color: '#00A04A'}}>
+                        Forgot Password?
+                      </a>
+                    </div>
 
-                      <Btn
-                        attrBtn={{
-                          color: 'primary',
-                          className: 'sign-btn d-block w-100 mb-4',
-                          type: 'submit',
-                        }}
-                      >
-                        Login
-                      </Btn>
-                    </Form>
-                  }
+                    <Btn
+                      attrBtn={{
+                        color: 'secondary',
+                        className: 'sign-btn d-block w-100 mb-2',
+                        type: 'submit',
+                      }}
+                    >
+                      Sign In
+                    </Btn>
+                  </Form>
                 </CardBody>
               </Card>
             </div>
-            <img src={Disrupt} alt="disrupt logo" style={{ width: '180px' }} />
+            <img src={Disrupt} alt="disrupt logo" style={{ marginTop: 'auto', marginBottom: '20px' }} />
           </div>
         </div>
-      </div>
+      )}
       <ToastContainer />
     </>
   );
