@@ -25,7 +25,7 @@ app.whenReady().then(() => {
 
   mainWindow.maximize(); 
 
-  mainWindow.loadURL('http://localhost:3000'); 
+  mainWindow.loadURL('https://forward-eight.vercel.app'); 
 
   mainWindow.on('closed', () => {
     mainWindow = null;
