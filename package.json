@@ -131,7 +131,7 @@
       "output": "dist"
     },
     "win": {
-      "sign": true,
+      "sign": false,
       "icon": "build/icons/win/icon.ico"
     },
     "mac": {
