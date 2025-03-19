@@ -6,6 +6,7 @@ import DefectedPanelsCard from './Components/DefectedPanelCard';
 import TotalPanel from './Components/TotalPannel';
 import LiveImage from './Components/Camera';
 import LatestDefectImage from './Components/DefectedImage';
+import TimerButtons from './Components/TimeButton';
 import { Row, Col, Container, Collapse } from 'reactstrap';
 
 const LiveAnalyticsForward = () => {
@@ -72,6 +73,9 @@ const LiveAnalyticsForward = () => {
                         </Col>
                         <Col  xl={3}>
                             <TotalPanel />
+                        </Col>
+                        <Col>
+                            <TimerButtons/>
                         </Col>
                     </Row>
 

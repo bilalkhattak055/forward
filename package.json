@@ -131,8 +131,8 @@
       "output": "dist"
     },
     "win": {
-      "sign": false,
-      "icon": "build/icon.ico"
+      "sign": true,
+      "icon": "build/icons/win/icon.ico"
     },
     "mac": {
       "target": "dmg"

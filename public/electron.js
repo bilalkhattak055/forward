@@ -14,7 +14,7 @@ app.whenReady().then(() => {
   mainWindow = new BrowserWindow({
     width: 2100,
     height: 1080, 
-    icon: path.resolve(__dirname, 'icon.ico'),
+    icon: path.resolve(__dirname, 'build/icons/win/icon.ico'),
     fullscreenable: true, 
     autoHideMenuBar: false, 
     webPreferences: {
