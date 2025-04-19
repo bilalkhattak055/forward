@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "reactstrap";
-import { ClipLoader} from 'react-spinners';
+import { ClipLoader } from 'react-spinners';
 
 // const Loader1 = () => {
 //   return (
@@ -28,12 +28,12 @@ import { ClipLoader} from 'react-spinners';
 //     </div>
 //   );
 // };
-const MyComponent = () => { 
+const MyComponent = () => {
   return (
-    <div  className="w-100 d-flex justify-content-center align-items-center" style={{height: 'calc(100vh - 300px)'}}>
-       <ClipLoader  size={55} color="#1E67D6" />
+    <div className="w-100 d-flex justify-content-center align-items-center" style={{ height: 'calc(100vh - 300px)' }}>
+      <ClipLoader size={55} color="#1E67D6" />
     </div>
-  ); 
+  );
 }
 
 export default MyComponent;
@@ -41,8 +41,10 @@ export default MyComponent;
 
 export const Loader3 = () => {
   return (
-    <div className="loader-box" style={{padding:0, margin:0, height:60}}>
-      <div className="loader-38" style={{ fontSize: 25 }}></div>
+    <div className="spinner-container">
+    <div className="spinner-grow" role="status" style={{ color: '#00A04A' }}>
+      <span className="sr-only">Loading...</span>
     </div>
+  </div>
   );
 };

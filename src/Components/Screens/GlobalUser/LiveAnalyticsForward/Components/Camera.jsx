@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Card, CardBody, CardTitle, Row, Col, Container } from 'reactstrap';
+import Football from "../asset/Football.png"
 
-const LiveImage = ({style, cardHeight = "556px",imgHeight="450px" }) => {
+const LiveImage = ({style, cardHeight = "556px",imgHeight="480px" }) => {
     const cardStyle = {
         height: cardHeight,
         ...style 
@@ -28,13 +29,13 @@ const LiveImage = ({style, cardHeight = "556px",imgHeight="450px" }) => {
                         >
                             {/* Image container */}
                             <img
-                                src="https://150995091.v2.pressablecdn.com/wp-content/uploads/2019/10/GALRMA-formations-in-RM-possession.png"
+                                src={Football}
                                 alt="Product"
                                 className="img-fluid rounded"
                                 style={{
                                     width: '100%',
                                     height: image.height,
-                                    objectFit: 'cover',
+                                    objectFit: 'contain',
                                     backgroundColor: '#f8f9fa'
                                 }}
                             />

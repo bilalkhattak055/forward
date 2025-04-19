@@ -6,7 +6,7 @@ import Reprocess from '../asset/reprocess.svg'
 
 const TimerButtons = () => {
   return (
-    <div className="d-flex gap-3 mb-2">
+    <div className="d-flex gap-3">
       <button  
         style={{ 
           display: 'flex', 
@@ -19,6 +19,7 @@ const TimerButtons = () => {
           color:"#335436",
           backgroundColor:"#FFFFFF",
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+          textWrap:"nowrap"
         }}
       >
         <img 
@@ -41,6 +42,7 @@ const TimerButtons = () => {
             color:"#335436",
             backgroundColor:"#FFFFFF",
             boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            textWrap:"nowrap"
           }}
       >
         <img 
@@ -63,6 +65,7 @@ const TimerButtons = () => {
         color:"#335436",
         backgroundColor:"#FFFFFF",
         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        textWrap:"nowrap"
       }}
       >
         <img 

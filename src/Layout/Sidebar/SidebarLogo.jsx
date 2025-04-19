@@ -3,7 +3,7 @@ import { Grid } from 'react-feather';
 import { Link, useNavigate } from 'react-router-dom';
 import { Image } from '../../AbstractElements';
 import CubaIcon from '../../assets/images/logo/login-logo.svg';
-import uniIcon from '../../assets/images/logo/forward.png';
+import uniIcon from '../../assets/images/logo/forward2.png';
 import CustomizerContext from '../../_helper/Customizer';
 import './side.css'
 import resyncState from '../../_helper/resync';

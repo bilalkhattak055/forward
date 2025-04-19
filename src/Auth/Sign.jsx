@@ -14,7 +14,7 @@ import Disrupt from './Disrupt.svg';
 import DesignTop from './DesignTop.svg';
 import DesignBottom from './DesignBottom.svg';
 import DesignBottom2 from './DesignBottom2.svg';
-import Axens1 from './forward.png';//logo
+import Axens1 from './Forward3.png';
 
 
 const useWindowSize = () => {

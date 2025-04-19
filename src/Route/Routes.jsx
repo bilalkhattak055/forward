@@ -42,6 +42,7 @@ import CameraDashboard from '../Components/Screens/GlobalUser/CameraConfiguratio
 import TargetControl from '../Components/Screens/GlobalUser/Target and Controal V2/TargetControl'
 import LeaderBoardV2 from "../Components/Screens/GlobalUser/LeaderBoard V2/LeaderBoard"
 import LiveAnalyticsForward from "../Components/Screens/GlobalUser/LiveAnalyticsForward/LiveAnalyticsForward";
+import Graphs from "../Components/Screens/GlobalUser/Inspected Screen/Graphs";
 
 //Company
 import FactoryDashboard from "../Components/Dashboards/CompanyDashbaord/Pages/FactoryDashboard";
@@ -116,6 +117,7 @@ import HeatMapDetails from "../Components/Dashboards/AreaDashbaord/reports/HeatM
 import Area_Analysis_new from "../Components/Screens/AreaAnalysis/Area_Analysis_new";
 import SummaryForGlobal from "../Components/Screens/GlobalUser/Summary/SummaryForGlobal";
 import LiveAnalyticsScreen from "../Components/Screens/GlobalUser/LiveAnalytics/LiveAnalyticsNewDesignV2";
+import ComingSoonPage from "../Components/Screens/GlobalUser/LiveAnalyticsForward/Pages";
 
  
 export const routes = {
@@ -143,7 +145,8 @@ export const routes = {
     { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <LiveAnalyticsForward /> },
     // { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <GlobalLiveAnalytics /> },
     { path: `${process.env.PUBLIC_URL}/dashboard/default/alerts`, Component: <HeatMapDetails /> },
-    { path: `${process.env.PUBLIC_URL}/history`, Component: <GlobalAIReport /> },
+    { path: `${process.env.PUBLIC_URL}/history`, Component: <Graphs /> },
+    { path: `${process.env.PUBLIC_URL}/pages`, Component: <ComingSoonPage/> },
     { path: `${process.env.PUBLIC_URL}/moduleInfo`, Component: <ModuleTable /> },
     { path: `${process.env.PUBLIC_URL}/targets`, Component: <GlobalTargetAndControls /> },
     { path: `${process.env.PUBLIC_URL}/newtargets`, Component:<TargetControl /> },

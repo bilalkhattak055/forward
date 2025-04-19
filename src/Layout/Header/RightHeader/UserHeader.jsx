@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LogIn } from "react-feather";
 import man from "../../../assets/images/appointment/app-ent.jpg";
-import uniIcon from '../../../assets/images/logo/uni-logo.jpeg'
+import uniIcon from '../../../assets/images/logo/ForwardF.png'
 
 import { LI, UL, Image, P } from "../../../AbstractElements";
 import CustomizerContext from "../../../_helper/Customizer";

@@ -6,24 +6,23 @@ import DefectedPanelsCard from './Components/DefectedPanelCard';
 import TotalPanel from './Components/TotalPannel';
 import LiveImage from './Components/Camera';
 import LatestDefectImage from './Components/DefectedImage';
-import TimerButtons from './Components/TimeButton';
+import Football from './asset/Football.png';
+import Football2 from './asset/Football2.png';
 import { Row, Col, Container, Collapse } from 'reactstrap';
 
 const LiveAnalyticsForward = () => {
     const defectImages = [
-        { url: 'https://living2022.com/media/images/Womens_Football_Match_.width-1320.height-990.format-jpeg.jpg' },
-        { url: 'https://cdnuploads.aa.com.tr/uploads/Contents/2021/11/06/thumbs_b_c_c0f3083541183d22ac6e9ff1e20963bf.jpg?v=023244' },
-        { url: 'https://images.indianexpress.com/2018/07/football-reuters-m.jpg?w=414' },
-        { url: 'https://cdnuploads.aa.com.tr/uploads/Contents/2021/11/06/thumbs_b_c_c0f3083541183d22ac6e9ff1e20963bf.jpg?v=023244' },
-        { url: 'https://images.indianexpress.com/2018/07/football-reuters-m.jpg?w=414' },
-        { url: 'https://cdnuploads.aa.com.tr/uploads/Contents/2021/11/06/thumbs_b_c_c0f3083541183d22ac6e9ff1e20963bf.jpg?v=023244' },
-        { url: 'https://images.indianexpress.com/2018/07/football-reuters-m.jpg?w=414' },
-        { url: 'https://cdnuploads.aa.com.tr/uploads/Contents/2021/11/06/thumbs_b_c_c0f3083541183d22ac6e9ff1e20963bf.jpg?v=023244' },
-        { url: 'https://cdnuploads.aa.com.tr/uploads/Contents/2021/11/06/thumbs_b_c_c0f3083541183d22ac6e9ff1e20963bf.jpg?v=023244' },
-        { url: 'https://cdnuploads.aa.com.tr/uploads/Contents/2021/11/06/thumbs_b_c_c0f3083541183d22ac6e9ff1e20963bf.jpg?v=023244' },
-        { url: 'https://cdnuploads.aa.com.tr/uploads/Contents/2021/11/06/thumbs_b_c_c0f3083541183d22ac6e9ff1e20963bf.jpg?v=023244' },
-        { url: 'https://cdnuploads.aa.com.tr/uploads/Contents/2021/11/06/thumbs_b_c_c0f3083541183d22ac6e9ff1e20963bf.jpg?v=023244' },
-        { url: 'https://cdnuploads.aa.com.tr/uploads/Contents/2021/11/06/thumbs_b_c_c0f3083541183d22ac6e9ff1e20963bf.jpg?v=023244' },
+        { url: Football },
+        { url: Football2 },
+        { url: Football },
+        { url: Football2 },
+        { url: Football },
+        { url: Football2 },
+        { url: Football },
+        { url: Football2 },
+        { url: Football },
+        { url: Football2 },
+        
     ];
     
     const smallScreenStyle = {
@@ -74,9 +73,7 @@ const LiveAnalyticsForward = () => {
                         <Col  xl={3}>
                             <TotalPanel />
                         </Col>
-                        <Col>
-                            <TimerButtons/>
-                        </Col>
+                       
                     </Row>
 
                     <Row>

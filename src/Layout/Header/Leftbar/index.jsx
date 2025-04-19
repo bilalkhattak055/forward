@@ -177,13 +177,9 @@ const Leftbar = () => {
         </H4>}
         */}
         <div className="d-flex align-items-center">
-          <span style={{ color: "#00A04A", fontWeight: "500", fontSize: "16px", marginRight: "8px" }}>
-            Don't Miss Out!
+          <span style={{ color: "#00A04A", fontWeight: "500", fontSize: "24px", marginRight: "8px" }}>
+          AI Visual Inspection System
           </span>
-          <span style={{ color: "#52526C", fontSize: "14px" }}>
-            Our new update has been released.
-          </span>
-          <span><img src={arrow} style={{width:"9px",height:"9px",marginLeft:"5px"}}/></span>
         </div>
       </Col>
     </Fragment>

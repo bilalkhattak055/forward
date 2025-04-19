@@ -23,7 +23,7 @@ const InspectedCard = () => {
     </div>
         
         </div>
-          <p style={{ color: '#2F2F3B', fontSize: '22px', marginTop: "-20px",fontWeight: '500' }} >
+          <p style={{ color: '#2F2F3B', fontSize: '28px', marginTop: "-20px",fontWeight: '500' }} >
             100
           </p>
       </CardBody>
