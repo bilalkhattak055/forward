@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import ModelAnalyticsHeader from '../CameraConfigurationV2/Components/ModelAnalytics';
+import ModelAnalyticsHeader from '../LiveAnalyticsForward/ModelAnalytics';
 import { WeekFilterProvider, useWeekFilter } from '../../../../Contexts/WeakGlobal';
 import PerformanceGrid from './Components/LeaderBCard';
 import RankingTable from './Components/LeaderBTable';

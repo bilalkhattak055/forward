@@ -1,9 +1,27 @@
-import React from "react";
+import React,{useState,useRef,useEffect} from "react";
 import { Card, CardBody, Row, Col } from "reactstrap";
 import Green from '../asset/greenarrow.svg';
 import bulb from '../asset/bulb.svg';
 
 const DefectedPanelsCard = () => {
+      const[pannelData,setPannelData]=useState({DefectedPanels:0,defectTypes: {}})
+      const wsRef=useRef(null);
+    
+      useEffect(()=>{
+        const socket = new WebSocket('ws://localhost:8765');
+        wsRef.current = socket;
+    
+        socket.addEventListener('open', (event) => {
+          console.log('Connected to WebSocket server');
+        });
+    
+        socket.addEventListener('message', (event) => {
+          const data = JSON.parse(event.data);
+          console.log('WebSocket data received:', data);
+          setPannelData({DefectedPanels:data.defectedPanels,defectTypes: data.defectTypes || {}})
+      });
+      }, [])
+  
   return (
     <Card
       style={{
@@ -86,7 +104,7 @@ const DefectedPanelsCard = () => {
 
             {/* Big Number */}
             <h1 style={{ fontSize: "38px", fontWeight: "700", margin: "17px 0" }}>
-              110
+              {pannelData.DefectedPanels}
             </h1>
 
             {/* Defect List */}

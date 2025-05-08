@@ -1,44 +1,58 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState,useContext} from "react";
 
-
+// Helper function to get the current week
 const getCurrentWeek = () => {
   const now = new Date();
   const oneJan = new Date(now.getFullYear(), 0, 1);
-  const weekNumber = Math.ceil(
-    (((now.getTime() - oneJan.getTime()) / 86400000) + oneJan.getDay() + 1) / 7
-  );
+  const dayOfWeek = oneJan.getDay(); // Get the day of the week for January 1st (0 = Sunday, 6 = Saturday)
+  
+  // Adjust to make Monday the start of the week (ISO standard)
+  const firstMondayOffset = (dayOfWeek === 0 ? -6 : 1) - dayOfWeek;
+  const firstMonday = new Date(oneJan.setDate(oneJan.getDate() + firstMondayOffset));
+  
+  // Calculate the difference in days and convert to full weeks
+  const daysSinceFirstMonday = Math.floor((now - firstMonday) / 86400000);
+  const weekNumber = Math.ceil((daysSinceFirstMonday + 1) / 7);
+  
   return `${now.getFullYear()}-W${weekNumber.toString().padStart(2, "0")}`;
 };
-const getPreviousWeek = () => {
-  const now = new Date();
-  const oneJan = new Date(now.getFullYear(), 0, 1);
-  const currentWeekNumber = Math.ceil(
-    (((now.getTime() - oneJan.getTime()) / 86400000) + oneJan.getDay() + 1) / 7
-  );
-  const previousWeekNumber = currentWeekNumber - 1;
-
-  if (previousWeekNumber > 0) {
-    // Return previous week of the current year
-    return `${now.getFullYear()}-W${previousWeekNumber.toString().padStart(2, "0")}`;
-  } else {
-    // Handle edge case for the first week of the year
-    const lastYear = now.getFullYear() - 1;
-    const lastYearOneJan = new Date(lastYear, 0, 1);
-    const lastYearDays = Math.ceil((new Date(lastYear, 11, 31) - lastYearOneJan) / 86400000);
-    const lastYearWeeks = Math.ceil((lastYearDays + lastYearOneJan.getDay() + 1) / 7);
-    return `${lastYear}-W${lastYearWeeks.toString().padStart(2, "0")}`;
-  }
-};
-
 
 const WeekFilterContext = createContext();
 
 export const WeekFilterProvider = ({ children }) => {
-  const [CurrentweekForLeaderBoard, setCurrentweekForLeaderBoard] = useState(getPreviousWeek())
+  const [currentFilter, setCurrentFilter] = useState('week'); 
   const [selectedWeek, setSelectedWeek] = useState(getCurrentWeek());
+  const [selectedMonth, setSelectedMonth] = useState(null);
+  const [selectedShift, setSelectedShift] = useState(null);
+
+  const CurrentweekForLeaderBoard = currentFilter === 'week' ? selectedWeek : selectedMonth;
+  const setCurrentweekForLeaderBoard = (value) => {
+    if (value.includes('W')) {
+      setCurrentFilter('week');
+      setSelectedWeek(value);
+      setSelectedMonth(null);
+    } else {
+      setCurrentFilter('month');
+      setSelectedMonth(value);
+      setSelectedWeek(null);
+    }
+  };
 
   return (
-    <WeekFilterContext.Provider value={{ selectedWeek, setSelectedWeek,setCurrentweekForLeaderBoard,CurrentweekForLeaderBoard }}>
+    <WeekFilterContext.Provider
+      value={{
+        currentFilter,
+        setCurrentFilter,
+        selectedWeek,
+        setSelectedWeek,
+        selectedMonth,
+        setSelectedMonth,
+        selectedShift,
+        setSelectedShift,
+        CurrentweekForLeaderBoard,
+        setCurrentweekForLeaderBoard,
+      }}
+    >
       {children}
     </WeekFilterContext.Provider>
   );

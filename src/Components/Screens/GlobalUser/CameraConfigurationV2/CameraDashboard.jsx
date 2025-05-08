@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ModelAnalyticsHeader from './Components/ModelAnalytics';
+import ModelAnalyticsHeader from '../LiveAnalyticsForward/ModelAnalytics';
 import CameraStatus from './Components/CameraStatus';
 import { Container, Col, Row } from 'reactstrap';
 import CameraCard from './Components/CameraGrid';

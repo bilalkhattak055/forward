@@ -136,7 +136,7 @@ const ComplianceTargetsChart = ({ loading = false }) => {
     }}>
       <Col>
         <CardTitle tag="h5" className="text-center mt-2">
-          Defected Panels
+          Defect Analysis
         </CardTitle>
         {loading ? (
           <div className="d-flex justify-content-center align-items-center" style={{ height: '250px' }}>

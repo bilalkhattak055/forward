@@ -131,7 +131,7 @@ const AlertCountsChart = ({ loading = false }) => {
         }}>
             <Col>
                 <CardTitle tag="h5" className="text-center mt-2">
-                    Okay Panels Data
+                    Perfomance Bar Graph
                 </CardTitle>
                 {loading ? (
                     <div className="d-flex justify-content-center align-items-center" style={{ height: '250px' }}>

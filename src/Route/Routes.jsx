@@ -42,8 +42,7 @@ import CameraDashboard from '../Components/Screens/GlobalUser/CameraConfiguratio
 import TargetControl from '../Components/Screens/GlobalUser/Target and Controal V2/TargetControl'
 import LeaderBoardV2 from "../Components/Screens/GlobalUser/LeaderBoard V2/LeaderBoard"
 import LiveAnalyticsForward from "../Components/Screens/GlobalUser/LiveAnalyticsForward/LiveAnalyticsForward";
-import Graphs from "../Components/Screens/GlobalUser/Inspected Screen/Graphs";
-
+import Graphs from "../Components/Screens/GlobalUser/LiveAnalyticsForward/Graphs";
 //Company
 import FactoryDashboard from "../Components/Dashboards/CompanyDashbaord/Pages/FactoryDashboard";
 import CameraFeed from "../Components/Dashboards/CompanyDashbaord/Pages/CameraFeed";

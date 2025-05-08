@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ComplianceTargetsChart from "./Component/ComplianceTarget";
 import AlertCountsChart from "./Component/AlertCount";
-import ModelAnalyticsHeader from "../CameraConfigurationV2/Components/ModelAnalytics";
+import ModelAnalyticsHeader from "../LiveAnalyticsForward/ModelAnalytics"
 import Cards from './Component/CARDFT';
 import TargetModal from "./Component/TargetModal";
 import { WeekFilterProvider, useWeekFilter } from "../../../../Contexts/WeakGlobal";
