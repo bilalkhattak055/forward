@@ -62,7 +62,7 @@ const AllCamerasScreen = ({ area: areaD, ItDashboard }) => {
     status: false,
     id: "",
   });
-  //filters states
+  //filters statesImage
   const [showFilters, setShowFilters] = useState(false)
   const filterCardRef = useRef(null);
   const filterButton = useRef(null);
