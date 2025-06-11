@@ -7,22 +7,20 @@ import TotalPanel from './Components/TotalPannel';
 import LiveImage from './Components/Camera';
 import LatestDefectImage from './Components/DefectedImage';
 import Football from './asset/Football.png';
-import Football2 from './asset/Football2.png';
 import { Row, Col, Container, Collapse } from 'reactstrap';
+import PannelData from './Zustand/DataSender';
 
 const LiveAnalyticsForward = () => {
+    const MainImage=PannelData((state)=> state.imageMain)
+
+    console.log("main image url",MainImage)
     const defectImages = [
         { url: Football },
-        { url: Football2 },
         { url: Football },
-        { url: Football2 },
         { url: Football },
-        { url: Football2 },
         { url: Football },
-        { url: Football2 },
         { url: Football },
-        { url: Football2 },
-        
+        { url: Football },
     ];
     
     const smallScreenStyle = {

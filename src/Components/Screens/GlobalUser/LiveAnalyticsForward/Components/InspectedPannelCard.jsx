@@ -1,26 +1,17 @@
 import React,{useState,useRef,useEffect}from 'react'
 import { Card, CardBody } from 'reactstrap';
 import { Loader3 } from '../../../../../CommonElements/Spinner/loader';
-import Icon from '../asset/user.svg'
+import Icon from '../asset/user.svg';
+import PannelData from '../Zustand/DataSender';
 const InspectedCard = () => {
-    const[pannelData,setPannelData]=useState({TotalPanels:0})
-    const wsRef=useRef(null);
-  
-    useEffect(()=>{
-      const socket = new WebSocket('ws://localhost:8765');
-      wsRef.current = socket;
-  
-      socket.addEventListener('open', (event) => {
-        console.log('Connected to WebSocket server');
-      });
-  
-      socket.addEventListener('message', (event) => {
-        const data = JSON.parse(event.data);
-        console.log('WebSocket data received:', data);
-        setPannelData({TotalPanels:data.totalPanels})
-    });
-    }, [])
+  const inspectedPanels=PannelData((state)=>state.inspectedPanels)
+  const connectWebSocket=PannelData((state)=>state.connectSocket)
 
+  console.log("inspected Panels data", inspectedPanels)
+
+  useEffect(()=>{
+    connectWebSocket();
+  },[connectWebSocket]);
   return (
     <Card style={{ borderRadius: '24px', minHeight: '135px', maxHeight: 'auto', backgroundColor: "#FFFFFF",border:"3px solid rgba(255, 255, 255, 1)" }} >
       <CardBody >
@@ -42,7 +33,7 @@ const InspectedCard = () => {
         
         </div>
           <p style={{ color: '#2F2F3B', fontSize: '28px', marginTop: "-20px",fontWeight: '500' }} >
-          {pannelData.TotalPanels}
+          {inspectedPanels}
           </p>
       </CardBody>
     </Card>

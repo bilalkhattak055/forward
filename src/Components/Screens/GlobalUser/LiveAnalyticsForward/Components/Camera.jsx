@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Card, CardBody, CardTitle, Row, Col, Container } from 'reactstrap';
 import Football from "../asset/Football.png"
+import PannelData from '../Zustand/DataSender';
 
 const LiveImage = ({style, cardHeight = "556px",imgHeight="480px" }) => {
+    const MainImage=PannelData((state)=> state.imageMain)
+    console.log("main image url",MainImage)
     const cardStyle = {
         height: cardHeight,
         ...style 
@@ -29,7 +32,7 @@ const LiveImage = ({style, cardHeight = "556px",imgHeight="480px" }) => {
                         >
                             {/* Image container */}
                             <img
-                                src={Football}
+                                src={ MainImage}
                                 alt="Product"
                                 className="img-fluid rounded"
                                 style={{

@@ -110,13 +110,15 @@
     "redux-saga": "^1.2.3",
     "sass": "^1.62.0",
     "slick-carousel": "^1.8.1",
+    "socket.io-client": "^4.8.1",
     "styled-components": "^5.3.10",
     "sweetalert2": "^11.7.3",
     "tesseract.js": "^5.1.1",
     "wait-on": "^8.0.2",
     "web-vitals": "^3.3.1",
     "world-map-geojson": "^1.0.2",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "zustand": "^5.0.4"
   },
   "main": "public/electron.js",
   "scripts": {

@@ -1,27 +1,13 @@
 import React,{useState,useEffect,useRef} from 'react'
 import { Card, CardBody } from 'reactstrap';
-import { Loader3 } from '../../../../../CommonElements/Spinner/loader';
 import Icon from '../asset/user.svg'
+import PannelData from '../Zustand/DataSender';
 const OkayCard = () => {
-  const[pannelData,setPannelData]=useState({okayPanels:0})
-  const wsRef=useRef(null);
-
+  const OkayPannels=PannelData((state)=>state.okayPanels);
+  const ConnectSocket=PannelData((state)=>state.connectSocket);
   useEffect(()=>{
-    const socket = new WebSocket('ws://localhost:8765');
-    wsRef.current = socket;
-
-    socket.addEventListener('open', (event) => {
-      console.log('Connected to WebSocket server');
-    });
-
-    socket.addEventListener('message', (event) => {
-      const data = JSON.parse(event.data);
-      console.log('WebSocket data received:', data);
-      setPannelData({okayPanels:data.okayPanels})
-  });
-  }, [])
-
-
+    ConnectSocket();
+  },[ConnectSocket])
   return (
     <Card style={{ borderRadius: '24px', minHeight: '140px', maxHeight: 'auto', backgroundColor: "#FFFFFF",border:"3px solid rgba(255, 255, 255, 1)" }} >
       <CardBody className='p-3'>
@@ -43,7 +29,7 @@ const OkayCard = () => {
         
         </div>
           <p style={{ color: '#2F2F3B', fontSize: '28px', marginTop: "-20px",fontWeight: '500' }} >
-            {pannelData.okayPanels}
+            {OkayPannels}
           </p>
       </CardBody>
     </Card>

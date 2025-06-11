@@ -1,27 +1,32 @@
-import React,{useState,useRef,useEffect} from "react";
+import React, { useEffect } from "react";
 import { Card, CardBody, Row, Col } from "reactstrap";
 import Green from '../asset/greenarrow.svg';
 import bulb from '../asset/bulb.svg';
+import PannelData from "../Zustand/DataSender";
 
 const DefectedPanelsCard = () => {
-      const[pannelData,setPannelData]=useState({DefectedPanels:0,defectTypes: {}})
-      const wsRef=useRef(null);
+  const DefectedPannel = PannelData((state) => state.defectedPanels);
+  const DefectedType = PannelData((state) => state.defectedType);
+  const ConnectionSocket = PannelData((state) => state.connectSocket);
+
+  useEffect(() => {
+    ConnectionSocket();
+  }, [ConnectionSocket]);
+
+  const defectTypes = Object.entries(DefectedType).map(([key, value]) => {
+    const numValue = typeof value === 'string' ? parseInt(value, 10) : value;
+    const highestValue = Math.max(...Object.values(DefectedType).map(v => 
+      typeof v === 'string' ? parseInt(v, 10) : v
+    ));
     
-      useEffect(()=>{
-        const socket = new WebSocket('ws://localhost:8765');
-        wsRef.current = socket;
-    
-        socket.addEventListener('open', (event) => {
-          console.log('Connected to WebSocket server');
-        });
-    
-        socket.addEventListener('message', (event) => {
-          const data = JSON.parse(event.data);
-          console.log('WebSocket data received:', data);
-          setPannelData({DefectedPanels:data.defectedPanels,defectTypes: data.defectTypes || {}})
-      });
-      }, [])
-  
+    return {
+      label: key,
+      value: value,
+      isActive: numValue === highestValue && numValue > 0,
+      color: numValue === highestValue && numValue > 0 ? "#00A04A" : "#52526CCC"
+    };
+  });
+      
   return (
     <Card
       style={{
@@ -29,7 +34,6 @@ const DefectedPanelsCard = () => {
         boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
         border: "none",
         height: "297px",
-        
       }}
     >
       <CardBody>
@@ -39,7 +43,7 @@ const DefectedPanelsCard = () => {
             <div
               style={{
                 position: "absolute",
-                display:"flex",
+                display: "flex",
                 left: "6px",
                 top: "16px",
                 height: "240px",
@@ -48,7 +52,6 @@ const DefectedPanelsCard = () => {
               }}
             />
 
-            
             <div style={{ display: "flex", alignItems: "center", position: "relative" }}>
               {/* Horizontal Line */}
               <div
@@ -70,17 +73,17 @@ const DefectedPanelsCard = () => {
 
               {/* Title */}
               <h6
-               className='ellipsis-text'
+                className='ellipsis-text'
                 style={{
                   fontSize: "12px",
                   fontWeight: "500",
                   color: "#67687A",
                   marginLeft: "18px",
-                  marginTop:"10px",
+                  marginTop: "10px",
                   whiteSpace: "nowrap"
                 }}
               >
-               Defected Panels
+                Defected Panels
               </h6>
 
               {/* Bulb Icon (Fixed Position) */}
@@ -104,17 +107,12 @@ const DefectedPanelsCard = () => {
 
             {/* Big Number */}
             <h1 style={{ fontSize: "38px", fontWeight: "700", margin: "17px 0" }}>
-              {pannelData.DefectedPanels}
+              {DefectedPannel}
             </h1>
 
-            {/* Defect List */}
+            {/* Defect List - Using the processed data */}
             <div style={{ marginTop: "22px", position: "relative" }}>
-              {[
-                { label: "Printing", value: "90", color: "#00A04A", isActive: true },
-                { label: "Material", value: "10" },
-                { label: "Touching", value: "00" },
-                { label: "Cutting", value: "02" },
-              ].map((item, index) => (
+              {defectTypes.map((item, index) => (
                 <Row key={index} style={{ alignItems: "center", marginBottom: "9px" }}>
                   {/* Horizontal Connector */}
                   <Col xs={2}>
@@ -127,7 +125,7 @@ const DefectedPanelsCard = () => {
                         left: "-4px",
                       }}
                     />
-                     {item.isActive ? (
+                    {item.isActive ? (
                       <div
                         style={{
                           width: "6px",
@@ -135,9 +133,8 @@ const DefectedPanelsCard = () => {
                           backgroundColor: item.color,
                           borderRadius: "50%",
                           position: "relative",
-                          top:"-4px",
-                          right:"8px"
-                          
+                          top: "-4px",
+                          right: "8px"
                         }}
                       />
                     ) : (
@@ -145,19 +142,14 @@ const DefectedPanelsCard = () => {
                     )}
                   </Col>
 
-                  {/* Dot (Only for Active) 
-                  <Col xs={1} style={{ paddingLeft: 0, paddingRight: 0 , display:"flex",}}>
-                   
-                  </Col>
-                  */}
                   {/* Label */}
-                  <Col xs={5} style={{ paddingLeft: 0 ,top:"-3px"}}>
+                  <Col xs={5} style={{ paddingLeft: 0, top: "-3px" }}>
                     <span
                       style={{
                         fontSize: "14px",
                         fontWeight: "500",
                         color: item.color || "#52526CCC",
-                        whiteSpace: "nowrap", 
+                        whiteSpace: "nowrap",
                         display: "inline-block"
                       }}
                     >
@@ -166,7 +158,7 @@ const DefectedPanelsCard = () => {
                   </Col>
 
                   {/* Value */}
-                  <Col xs={4} style={{ textAlign: "right",top:"-3px" }}>
+                  <Col xs={4} style={{ textAlign: "right", top: "-3px" }}>
                     <span
                       style={{
                         fontSize: "22px",
