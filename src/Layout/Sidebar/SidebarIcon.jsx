@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import cubaimg from "../../assets/images/logo/login-logo.svg"
 import CustomizerContext from '../../_helper/Customizer';
-import uniIcon from '../../assets/images/logo/uni-logo.jpeg';
+import uniIcon from '../../assets/images/logo/ForwardT3.png';
 
 const SidebarIcon = () => {
   const { layoutURL,  toggleSidebar, toggleIcon } = useContext(CustomizerContext);

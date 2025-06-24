@@ -3,7 +3,7 @@ import { Grid } from 'react-feather';
 import { Link, useNavigate } from 'react-router-dom';
 import { Image } from '../../AbstractElements';
 import CubaIcon from '../../assets/images/logo/login-logo.svg';
-import uniIcon from '../../assets/images/logo/forward2.png';
+import uniIcon from '../../assets/images/logo/ForwardT3.png';
 import CustomizerContext from '../../_helper/Customizer';
 import './side.css'
 import resyncState from '../../_helper/resync';
@@ -66,7 +66,7 @@ const SidebarLogo = () => {
 
 
   return (
-    <div className='logo-wrapper new-logo-wrapper'>
+    <div className='logo-wrapper new-logo-wrapper' style={{border: '1.5px solid rgb(37, 37, 37)'}}>
       {layout1 !== 'compact-wrapper dark-sidebar' && layout1 !== 'compact-wrapper color-sidebar' && mixLayout ? (
         navigation ? (<div onClick={clickLogo} className='bilal'>
           <Image  attrImage={{ className: 'img-fluid d-inline uni-logo', style: { height: '110px',width:"100%" }, src: `${role === 'factory' ? uniIcon : CubaIcon}`, alt: 'logo-main' }} />

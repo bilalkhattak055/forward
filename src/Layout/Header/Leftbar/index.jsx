@@ -177,7 +177,7 @@ const Leftbar = () => {
         </H4>}
         */}
         <div className="d-flex align-items-center">
-          <span style={{ color: "#00A04A", fontWeight: "500", fontSize: "24px", marginRight: "8px" }}>
+          <span style={{ color: "#FFFFFF", fontWeight: "500", fontSize: "24px", marginRight: "8px" }}>
           AI Visual Inspection System
           </span>
         </div>

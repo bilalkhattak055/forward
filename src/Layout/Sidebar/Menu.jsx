@@ -41,7 +41,7 @@ export const MENUITEMS = {
         // { path: `${process.env.PUBLIC_URL}/dashboard/summary`, icon: <Grid />, title: "Summary", activeTitle: 'summary', type: "link" },
         { path: `${process.env.PUBLIC_URL}/dashboard/default`, icon: <Home/>, title: "Dashboard", activeTitle: 'default', type: "link" }, 
         { path: `${process.env.PUBLIC_URL}/history`, icon: <Grid/>, title: "History", activeTitle: 'history', type: "link" },
-       // { path: `${process.env.PUBLIC_URL}/pages`, icon: <Layout/>, title: "Pages", activeTitle: 'pages', type: "link" },
+       { path: `${process.env.PUBLIC_URL}/pages`, icon: <Layout/>, title: "Details", activeTitle: 'pages', type: "link" },
       //  { path: `${process.env.PUBLIC_URL}/sub-area-analysis`, icon: <Layers />, title: "Sub Area Analysis", activeTitle: 'sub-area-analysis', type: "link" },
         //{ path: `${process.env.PUBLIC_URL}/targets`, icon: <Target />, title: "Targets & Controls", activeTitle: 'targets', type: "link" },
         //{ path: `${process.env.PUBLIC_URL}/live_alerts`, icon: <Activity />, title: "Live Alerts", activeTitle: 'live_alerts', type: "link" },

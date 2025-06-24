@@ -23,7 +23,7 @@ const DefectedPanelsCard = () => {
       label: key,
       value: value,
       isActive: numValue === highestValue && numValue > 0,
-      color: numValue === highestValue && numValue > 0 ? "#00A04A" : "#52526CCC"
+      color: numValue === highestValue && numValue > 0 ? "#00A04A" : "#FFFFFF"
     };
   });
       
@@ -31,9 +31,10 @@ const DefectedPanelsCard = () => {
     <Card
       style={{
         borderRadius: "15px",
-        boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
         border: "none",
         height: "297px",
+        backgroundColor: "#141E2B",
+        boxShadow: '1px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.6)'
       }}
     >
       <CardBody>
@@ -77,7 +78,7 @@ const DefectedPanelsCard = () => {
                 style={{
                   fontSize: "12px",
                   fontWeight: "500",
-                  color: "#67687A",
+                  color: "#FFFFFF",
                   marginLeft: "18px",
                   marginTop: "10px",
                   whiteSpace: "nowrap"
@@ -106,7 +107,7 @@ const DefectedPanelsCard = () => {
             </div>
 
             {/* Big Number */}
-            <h1 style={{ fontSize: "38px", fontWeight: "700", margin: "17px 0" }}>
+            <h1 style={{ fontSize: "38px", fontWeight: "700", margin: "17px 0" ,color:"#FFFFFF"}}>
               {DefectedPannel}
             </h1>
 
@@ -164,6 +165,7 @@ const DefectedPanelsCard = () => {
                         fontSize: "22px",
                         fontWeight: "500",
                         whiteSpace: "nowrap",
+                        color:"#FFFFFF"
                       }}
                     >
                       {item.value}

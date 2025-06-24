@@ -245,8 +245,8 @@ console.log("MY CURRENT WEAK",getCurrentWeek())
             100% { transform: scale(1); }
           }
           .filter-dropdown .btn-primary {
-            background-color: #00A04A !important;
-            border-color: #00A04A !important;
+            background-color: #141E2B !important;
+            border:"2px solid rgb(37, 37, 37) !important;
             font-size: 16px;
             transition: all 0.3s ease;
           }
@@ -292,7 +292,8 @@ console.log("MY CURRENT WEAK",getCurrentWeek())
           }
 
           .dropdown-menu-container::-webkit-scrollbar-thumb {
-            background: #00A04A;
+            background-color: #141E2B !important;
+            border:"2px solid rgb(37, 37, 37) !important;
             border-radius: 3px;
           }
 
@@ -345,22 +346,22 @@ console.log("MY CURRENT WEAK",getCurrentWeek())
 
 
       <Container fluid >
-        <Row className="py-2 pb-2 mb-3 shadow-sm " style={{backgroundColor:"#FFFFFF",borderRadius:"10px",width:"100%",marginLeft:"0px"}}>
+        <Row className="py-2 pb-2 mb-3 shadow-sm " style={{backgroundColor:"#141E2B",borderRadius:"10px",width:"100%",marginLeft:"0px",border:'2px solid rgb(37, 37, 37)' }}>
           <Col className="d-flex align-items-center justify-content-between  dropdown">
 
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", flex: 1 }}>
-              <h5 className="mb-0 heading " style={{ fontSize: "19px" }}>{getDisplayHeading()}</h5>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", flex: 1}}>
+              <h5 className="mb-0 heading " style={{ fontSize: "19px",color:"#FFFFFF" }}>{getDisplayHeading()}</h5>
               <p className="mb-0 subheading" style={{ fontSize: "3vw" }}>{alertText}</p>
             </div>
             {shouldShowFilters && (
 
               <Dropdown
                 isOpen={dropdownOpen}
-                className='filter-dropdown bg-white rounded'
+                className='filter-dropdown '
                 toggle={() => setDropdownOpen(!dropdownOpen)}
-                style={{ border: "1px solid #ECECEC" }}
+                style={{border:'2px solid rgb(37, 37, 37)',borderRadius:"5px"}}
               >
-                <DropdownToggle className='ml-2' color="primary" style={{ textWrap: "nowrap" }}>
+                <DropdownToggle className='ml-2' style={{ textWrap: "nowrap" }}>
                   Filters<img src={Filter} />
                 </DropdownToggle>
                 <DropdownMenu end className="p-3" style={{ minWidth: '300px' }}>

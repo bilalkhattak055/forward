@@ -723,7 +723,7 @@
   }
 
   .page-body-wrapper {
-    background-color: $main-body-color;
+    background-color: #0F1821 ;
 
     .page-body {
       min-height: calc(100vh - #{$header-size});
@@ -1336,11 +1336,12 @@
           z-index: 9;
           height: auto;
           line-height: inherit;
-          background: $white;
+          background: #0F1821;
           width: $sidebar-compact-width;
           text-align: left;
           transition: 0.3s;
-          box-shadow: 0 0 21px 0 rgba($semi-dark, 0.1);
+          box-shadow: 0.6px 0.6px 0.6px 0.6px rgba(0, 0, 0, 0.6);
+          border: 1.5px solid rgb(37, 37, 37);
 
           .logo-wrapper,
           .logo-icon-wrapper {
@@ -1349,6 +1350,8 @@
           }
           .new-logo-wrapper {
             padding: 7px 45px;
+            background-color: #0F1821;
+            border: 1.5px solid rgb(37, 37, 37);
           }
 
           .logo-icon-wrapper {
@@ -1546,13 +1549,13 @@
                     vertical-align: -2px;
                     float: none;
                     transition: all 0.3s ease;
-                    color:#52526CCC;
+                    color:#b0b8c1;
                   }
 
                   span {
                     letter-spacing: 0.7px;
                     text-transform: capitalize;
-                    color: #52526CCC;
+                    color: #b0b8c1;
                     width: 79%;
                   }
 
@@ -1640,7 +1643,7 @@
                   &:hover {
                     >a {
                       &:hover {
-                        background-color: rgba($primary-color, 0.07);
+                        background-color: #12212C;
                         transition: all 0.3s ease;
                       }
                     }
@@ -1652,24 +1655,24 @@
                     &:hover {
                       svg {
                         fill: rgba($primary-color, 0.1%);
-                        stroke:#00A04A;
+                        stroke:#FFFFFF;
                         transition: all 0.3s ease;
 
                         &.fill-icon {
-                          fill:#00A04A;
+                          fill:#FFFFFF;
                           stroke: none;
                         }
                       }
 
                       span {
-                        color: #00A04A;
+                        color: #FFFFFF;
                         transition: all 0.3s ease;
                         
                       }
 
                       .according-menu {
                         i {
-                          color:#00A04A;
+                          color:#FFFFFF;
                           transition: all 0.3s ease;
                         }
                       }
@@ -1931,33 +1934,33 @@
                     transition: all 0.5s ease;
                     position: relative;
                     margin-bottom: 10px;
-                    color:#335436;
-                    background-color: #02A25112;
+                    color:#FFFFFF;
+                    background-color: #E6ECF4;
 
                     .according-menu {
                       i {
-                        color:#335436;
+                        color:#b0b8c1;
                       }
                     }
 
                     svg {
-                      color:#335436;
+                      color:#2e3235;
                       // fill: white;
                     }
 
                     span {
-                      color: #335436;
-                      color:#335436;
+                      color: #2e3235;
+                      color:#2e3235;
                       transition: all 0.3s ease;
                     }
                     &.active:hover{
                       svg {
-                        color:#52526CCC;
+                        color:#FFFFFF;
                       }
 
                       .according-menu {
                         i {
-                          color: #52526CCC;
+                          color: #b0b8c1;
                         }
                       }
                       
@@ -1968,13 +1971,13 @@
                   &:hover {
                     svg {
                       &.stroke-icon {
-                        stroke: #52526CCC;
+                        stroke: #b0b8c1;
                         transition: all 0.3s ease;
                       }
                     }
 
                     span {
-                      color: #52526CCC;
+                      color: #e8edf3;
                     }
 
                   }

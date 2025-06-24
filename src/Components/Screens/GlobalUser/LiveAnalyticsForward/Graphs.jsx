@@ -7,6 +7,7 @@ import ModelAnalyticsHeader from './ModelAnalytics';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import download from './asset/download.svg';
+import ExcelReport from './Reports/ExcelReport';
 
 const Graphs = () => {
   const [exporting, setExporting] = useState(false);
@@ -116,12 +117,13 @@ const Graphs = () => {
           />
         </Col>
       </Row>
-      <div className="mb-1 " style={{ display: "flex", justifyContent: "flex-end" }}>
+      <div className="mb-1 " style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
+        <ExcelReport />
         <Button 
-         className="bg-secondary p-2 shadow-md"
+          className="bg-secondary p-2 shadow-md"
           onClick={exportToPDF}
           disabled={loading || exporting}
-          style={{ backgroundColor: "#00A04A", display: "flex", alignItems: "center", gap: "8px", borderRadius: "6px",marginRight:"10px",boxShadow:"0px 0px 5px rgba(226, 224, 224, 0.32)"}}
+          style={{ backgroundColor: "#00A04A", display: "flex", alignItems: "center", gap: "8px", borderRadius: "6px", marginRight: "10px", boxShadow: "0px 0px 5px rgba(226, 224, 224, 0.32)"}}
         >
           {exporting ? (
             <>
@@ -131,7 +133,7 @@ const Graphs = () => {
           ) : (
             <>
               <img src={download} alt="download pdf" />
-              Download Report
+              Download PDF Report
             </>
           )}
         </Button>

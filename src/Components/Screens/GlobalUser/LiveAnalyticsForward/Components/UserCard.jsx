@@ -50,7 +50,7 @@ const UserCard = () => {
 
   return (
     <>
-      <Card style={{ borderRadius: '24px', minHeight: '300px', maxHeight: 'auto', backgroundColor: "#84CDA7", border: "3px solid rgba(255, 255, 255, 1)" }} >
+      <Card style={{ borderRadius: '24px', minHeight: '300px', maxHeight: 'auto', backgroundColor: "#141E2B", border: "1px solid rgb(37, 37, 37)" }} >
         <CardBody className='pt-4'>
           {loading ? (
             <div className="text-center mt-5">
@@ -59,8 +59,8 @@ const UserCard = () => {
           ) : (
             <>
               <div className="d-flex align-items-center mb-3">
-                <Clock size={18} color="#335436" className="me-1" />
-                <p className='ellipsis-text mb-0' style={{ fontSize: '14px', color: '#335436', fontWeight: '500' }}>
+                <Clock size={18} color="#FFFFFF" className="me-1" />
+                <p className='ellipsis-text mb-0' style={{ fontSize: '14px', color: '#FFFFFF', fontWeight: '500' }}>
                   Timer:
                   <Badge color="light" className="ms-1" style={{ color: '#335436', backgroundColor: "#84CDA7 !important" }}>
                     {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
@@ -69,32 +69,32 @@ const UserCard = () => {
               </div>
 
               <div className="d-flex align-items-center mb-3">
-                <Box size={18} color="#335436" className="me-1" />
-                <p className='ellipsis-text mb-0' style={{ fontSize: '14px', color: '#335436', fontWeight: '500' }}>
+                <Box size={18} color="#FFFFFF" className="me-1" />
+                <p className='ellipsis-text mb-0' style={{ fontSize: '14px', color: '#FFFFFF', fontWeight: '500' }}>
                   Batch-ID:
                   <span className="ms-1">{cardData.batchId}</span>
                 </p>
               </div>
 
               <div className="d-flex align-items-center mb-3">
-                <FileText size={18} color="#335436" className="me-1" />
-                <p className='ellipsis-text mb-0' style={{ fontSize: '14px', color: '#335436', fontWeight: '500' }}>
+                <FileText size={18} color="#FFFFFF" className="me-1" />
+                <p className='ellipsis-text mb-0' style={{ fontSize: '14px', color: '#FFFFFF', fontWeight: '500' }}>
                   Article Name:
                   <span className="ms-1">{cardData.articleName}</span>
                 </p>
               </div>
 
               <div className="d-flex align-items-center mb-3">
-                <ShoppingBag size={18} color="#335436" className="me-1" />
-                <p className='ellipsis-text mb-0' style={{ fontSize: '14px', color: '#335436', fontWeight: '500' }}>
+                <ShoppingBag size={18} color="#FFFFFF" className="me-1" />
+                <p className='ellipsis-text mb-0' style={{ fontSize: '14px', color: '#FFFFFF', fontWeight: '500' }}>
                   Order-ID:
                   <span className="ms-1">{cardData.orderId}</span>
                 </p>
               </div>
 
               <div className="d-flex align-items-center mb-3">
-                <AlertCircle size={18} color="#335436" className="me-1" />
-                <p className='ellipsis-text mb-0' style={{ fontSize: '15px', color: '#335436', fontWeight: '500' }}>
+                <AlertCircle size={18} color="#FFFFFF" className="me-1" />
+                <p className='ellipsis-text mb-0' style={{ fontSize: '15px', color: '#FFFFFF', fontWeight: '500' }}>
                   Defect Status:
                   <Badge color={cardData.defectStatus === "Corrected" ? "success" : "danger"} className="ms-1" pill>
                     {cardData.defectStatus}

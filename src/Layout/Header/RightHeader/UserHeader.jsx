@@ -79,7 +79,7 @@ localStorage.removeItem('qafilters')
   return (
     <li
     ref={dropdownRef}
-
+    style={{border: '1.5px solid rgb(37, 37, 37)',}}
     className="profile-nav onhover-dropdown py-0 ms-2  px-2 py-2 rounded bg-primary logoutwidthforresponsive" 
     onClick={()=> setShow(!show)}
     >

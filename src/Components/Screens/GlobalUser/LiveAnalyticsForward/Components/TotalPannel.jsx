@@ -16,7 +16,7 @@ const TotalPanel = () => {
           top: 3,
           left: 3,
           blur: 11.17,
-          color: '#3E3A641A',
+          color: ' #FFFFFF',
           opacity: 0.4,
           background: "transparent"
         }
@@ -31,7 +31,7 @@ const TotalPanel = () => {
         fontFamily: "Rubik, sans-serif",
         fontWeight: 500,
         labels: {
-          colors: "#666",
+          colors: "#FFFFFF",
           useSeriesColors: false
         },
         markers: {
@@ -57,18 +57,30 @@ const TotalPanel = () => {
           expandOnClick: false,
           donut: {
             size: "83%",
-            background: "#FFFFFF",
+            background: "#141E2B",
             labels: {
               show: true,
               name: {
-                offsetY: 4,
+    
+                color: "#FFFFFF", // Added color for name
+                fontSize: "15px",
+                fontFamily: "Rubik, sans-serif",
+                fontWeight: 500,
+              },
+              value: {
+
+                color: "#FFFFFF", // Added color for value
+                fontSize: "15px",
+                fontFamily: "Rubik, sans-serif",
+                fontWeight: 600,
               },
               total: {
                 show: true,
                 fontSize: "20px",
                 fontFamily: "Rubik, sans-serif",
                 fontWeight: 500,
-                label: "Total Pannels",
+                color: "#FFFFFF !important", // Force white color with !important
+                label: "Total Panels",
                 formatter: () => "Total Panels",
               },
             },
@@ -196,6 +208,7 @@ const TotalPanel = () => {
                     total: {
                       ...prevState.options.plotOptions.pie.donut.labels.total,
                       label: `${data.totalPanels}`,
+                      color: "#FFFFFF", // Ensure white color is maintained
                     },
                   },
                 },
@@ -239,12 +252,12 @@ const TotalPanel = () => {
     : '';
 
   return (
-    <Card>
-      <CardHeader className='card-no-border'>
-        <div className="d-flex justify-content-between align-items-center">
+    <Card style={{backgroundColor:"#141E2B"}}>
+      <CardHeader className='card-no-border' style={{backgroundColor:"#141E2B"}}>
+        <div className="d-flex justify-content-between align-items-center" >
           <div>
-            <h5>Perfomance Pi-Chart</h5>
-            <span style={{textWrap:"nowrap",fontWeight:500}}>Last updated: {formattedTimestamp}</span>
+            <h5 style={{color:"#FFFFFF"}}>Performance Pi-Chart</h5>
+            <span style={{textWrap:"nowrap",fontWeight:500,color:"#FFFFFF"}}>Last updated: {formattedTimestamp}</span>
           </div>
         </div>
       </CardHeader>
@@ -260,15 +273,15 @@ const TotalPanel = () => {
         <div className="legend-container" style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="legend-item" style={{ display: 'flex', alignItems: 'center', marginRight: '15px' }}>
             <span style={{ width: '10px', height: '10px', backgroundColor: '#FB0C0C', borderRadius: '50%', display: 'inline-block', marginRight: '5px' }}></span>
-            <span style={{ fontSize: '14px', color: '#333', fontWeight: '500'}}>Defected</span>
+            <span style={{ fontSize: '14px', color: '#FFFFFF', fontWeight: '500'}}>Defected</span>
           </div>
           <div className="legend-item" style={{ display: 'flex', alignItems: 'center', marginRight: '15px' }}>
             <span style={{ width: '10px', height: '10px', backgroundColor: '#FDA844', borderRadius: '50%', display: 'inline-block', marginRight: '5px' }}></span>
-            <span style={{ fontSize: '14px', color: '#333', fontWeight: '500' }}>Okay </span>
+            <span style={{ fontSize: '14px', color: '#FFFFFF', fontWeight: '500' }}>Okay </span>
           </div>
           <div className="legend-item" style={{ display: 'flex', alignItems: 'center' }}>
             <span style={{ width: '10px', height: '10px', backgroundColor: '#54BA4A', borderRadius: '50%', display: 'inline-block', marginRight: '5px' }}></span>
-            <span style={{ fontSize: '14px', color: '#333', fontWeight: '500' }}>Total</span>
+            <span style={{ fontSize: '14px', color: '#FFFFFF', fontWeight: '500' }}>Total</span>
           </div>
         </div>
         

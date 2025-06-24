@@ -106,6 +106,7 @@
     "react-zoom-pan-pinch": "^3.6.1",
     "reactour": "^1.19.0",
     "reactstrap": "^9.1.9",
+    "recharts": "^2.15.3",
     "redux": "^4.2.1",
     "redux-saga": "^1.2.3",
     "sass": "^1.62.0",

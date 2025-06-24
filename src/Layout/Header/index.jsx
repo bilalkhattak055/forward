@@ -263,7 +263,7 @@ const Header = () => {
 
   return (
     <Fragment>
-    <div className={`page-header ${toggleIcon ? 'close_icon' : ''} `} style={{backgroundColor:"#FFFFFF",boxShadow: "0px 4px 5px rgba(204, 202, 202, 0.24)"}}>
+    <div className={`page-header ${toggleIcon ? 'close_icon' : ''} `} style={{backgroundColor:"#0F1821",border: '1.5px solid rgb(37, 37, 37)', boxShadow: '0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.6)'}}>
         <Row className='header-wrapper m-0 ' style={{ position: 'relative' }}>
           <Form className='form-inline search-full col' action='#' method='get'>
             <div className='form-group w-100'>

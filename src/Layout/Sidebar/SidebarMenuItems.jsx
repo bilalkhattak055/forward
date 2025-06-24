@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import disruptLogo from "../../assets/images/logo/login-logo.svg";
+import disruptLogo from "../../assets/images/logo/DIST.png";
 import CustomizerContext from "../../_helper/Customizer";
 import { MENUITEMS } from "./Menu";
 import "./side.css";
@@ -502,7 +502,7 @@ localStorage.removeItem('areaAnalysisFilters')
               className={`${toggleIcon ? "hide-true" : ""} disrupt-logo-hideOn`}
             >
               <img
-                style={{ position: "absolute", bottom: "94px", right: "12px" }}
+                style={{ position: "absolute", bottom: "40px", right: "12px",width: "250px" }}
                 src={disruptLogo}
                 alt="disrupt-logo"
               />

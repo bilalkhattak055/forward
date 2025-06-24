@@ -2,36 +2,38 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardBody, CardTitle, Spinner } from 'reactstrap';
 import ImageZoom from '../../../../Dashboards/AreaDashbaord/reports/Components/LiveAlertsCards/ImageZoom';
 
+
 const LatestDefectImage = ({ images = [], style }) => {
     const [loading, setLoading] = useState(true);
     const [loadedImages, setLoadedImages] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null); // ✅ Added this
 
-  useEffect(() => {
-    if (images.length > 0) {
-      const timer = setTimeout(() => {
-        setLoadedImages(images);
-        setLoading(false);
-      }, 1000);
-      return () => clearTimeout(timer);
-    } else {
-      setLoading(false);
-    }
-  }, [images]);
+    useEffect(() => {
+        if (images.length > 0) {
+            const timer = setTimeout(() => {
+                setLoadedImages(images);
+                setLoading(false);
+            }, 1000);
+            return () => clearTimeout(timer);
+        } else {
+            setLoading(false);
+        }
+    }, [images]);
 
-  const handleImageError = (e) => {
-    e.target.style.display = 'none';
-  };
+    const handleImageError = (e) => {
+        e.target.style.display = 'none';
+    };
 
-  const handleImageClick = (url) => {
-    setSelectedImage(url);
-    setIsOpen(true);
-  };
+    const handleImageClick = (url) => {
+        setSelectedImage(url); // ✅ Set the selected image
+        setShowModal(true);    // ✅ Open modal
+    };
 
     return (
-        <Card className="shadow " style={style}>
+        <Card className="shadow" style={{background: '#141E2B'}}>
             <CardBody>
-                <CardTitle tag="h6" className="mb-3">Latest Defect Image</CardTitle>
+                <CardTitle tag="h6" className="mb-3" style={{color: '#FFFFFF'}}>Latest Defect Image</CardTitle>
 
                 <div
                     className="defect-images-container"
@@ -42,7 +44,6 @@ const LatestDefectImage = ({ images = [], style }) => {
                         paddingRight: '10px'
                     }}
                 >
-                    {/* Custom scrollbar styles */}
                     <style>
                         {`
                             .defect-images-container::-webkit-scrollbar {
@@ -53,7 +54,7 @@ const LatestDefectImage = ({ images = [], style }) => {
                                 border-radius: 8px;
                             }
                             .defect-images-container::-webkit-scrollbar-thumb {
-                                background: #4CAF50;
+                                background: #4ECDC4;
                                 border-radius: 8px;
                             }
                         `}
@@ -66,7 +67,6 @@ const LatestDefectImage = ({ images = [], style }) => {
                     ) : (
                         <>
                             {loadedImages.length > 0 ? (
-                                // Display actual images when available
                                 loadedImages.map((image, index) => (
                                     <div
                                         key={index}
@@ -88,12 +88,11 @@ const LatestDefectImage = ({ images = [], style }) => {
                                             className="img-fluid w-100 h-100"
                                             style={{ objectFit: 'cover', display: image.url ? 'block' : 'none' }}
                                             onError={handleImageError}
-                                            onClick={() => setShowModal(true)}
+                                            onClick={() => handleImageClick(image.url)}
                                         />
                                     </div>
                                 ))
                             ) : (
-                                // Empty state placeholders
                                 Array.from({ length: style?.placeholderCount || 4 }).map((_, index) => (
                                     <div
                                         key={index}
@@ -109,10 +108,9 @@ const LatestDefectImage = ({ images = [], style }) => {
                         </>
                     )}
 
-                    {/* Only show modal when it's triggered */}
                     {showModal && (
                         <ImageZoom
-                            photo={loadedImages[0]?.url}
+                            photo={selectedImage}
                             setIsOpen={setShowModal}
                             setShowModal={setShowModal}
                             imageData={'Camera 1'}

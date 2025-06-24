@@ -37,7 +37,7 @@ const AlertCountsChart = ({ loading = false }) => {
             title: {
                 style: {
                     fontSize: '14px',
-                    color: '#8C8C8C',
+                    color: '#b0b8c1',
                     fontWeight: 500,
                     fontFamily: 'Arial, sans-serif',
                 },
@@ -46,7 +46,7 @@ const AlertCountsChart = ({ loading = false }) => {
             labels: {
                 style: {
                     fontSize: '12px',
-                    colors: '#666666',
+                    colors: '#b0b8c1',
                 },
             },
             axisBorder: {
@@ -61,7 +61,7 @@ const AlertCountsChart = ({ loading = false }) => {
                 text: 'Number of Panels',
                 style: {
                     fontSize: '14px',
-                    color: '#8C8C8C',
+                    color: '#b0b8c1',
                     fontWeight: 500,
                     fontFamily: 'Arial, sans-serif',
                 },
@@ -69,7 +69,7 @@ const AlertCountsChart = ({ loading = false }) => {
             labels: {
                 style: {
                     fontSize: '12px',
-                    colors: '#666666',
+                    colors: '#b0b8c1',
                 },
             },
             min: 0,
@@ -127,10 +127,11 @@ const AlertCountsChart = ({ loading = false }) => {
         <Row style={{
             borderRadius: '20px',
             border: '1px solid #ECECEC',
-            backgroundColor: "#FDFEFF"
+            backgroundColor: "#141E2B",
+            border: '2.5px solid rgb(37, 37, 37)',
         }}>
             <Col>
-                <CardTitle tag="h5" className="text-center mt-2">
+                <CardTitle tag="h5" className="text-center mt-2" style={{color:"#b0b8c1"}}>
                     Perfomance Bar Graph
                 </CardTitle>
                 {loading ? (
