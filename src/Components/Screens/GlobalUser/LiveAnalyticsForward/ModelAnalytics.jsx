@@ -311,7 +311,7 @@ console.log("MY CURRENT WEAK",getCurrentWeek())
 
         @media (max-width: 490px) {
            .header-container {
-             flex-direction: column;
+             flex-direction: row;
         }
            .week-selector {
              margin-top: 10px !important;
@@ -336,9 +336,9 @@ console.log("MY CURRENT WEAK",getCurrentWeek())
           }
           .dropdown{
             display:flex !important;
-            flex-direction:column !important;
+            flex-direction:row !important;
             align-items:flex-start !important;
-            margin-top:7px !important;
+            
           }        
         }
       `}

@@ -300,37 +300,99 @@ const ExcelReport = () => {
 
     return (
         <div>
-            <button 
+            <style>
+                {`
+                    @keyframes downloadArrow {
+                        0% { transform: translateY(0px); }
+                        50% { transform: translateY(3px); }
+                        100% { transform: translateY(0px); }
+                    }
+
+                    .download-button {
+                        position: relative;
+                        background: linear-gradient(135deg,rgb(7, 168, 56) 50%,rgb(90, 226, 120) 100%);
+                        border: none;
+                        border-radius: 12px;
+                        padding: 14px 24px;
+                        color: white;
+                        font-size: 16px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+                        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                        overflow: hidden;
+                        min-width: 200px;
+                        justify-content: center;
+                    }
+
+                    .download-button::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                        transition: left 0.5s;
+                    }
+
+                    .download-button:hover::before {
+                        left: 100%;
+                    }
+
+                    .download-button:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 25px rgba(39, 148, 80, 0.4);
+                        background: linear-gradient(135deg,rgb(13, 184, 36) 0%,rgb(112, 192, 136) 100%);
+                    }
+
+                    .download-button:active {
+                        transform: translateY(0px);
+                        box-shadow: 0 4px 15px rgba(20, 121, 45, 0.3);
+                    }
+
+                    .download-arrows {
+                        display: inline-block;
+                        transition: all 0.3s ease;
+                        font-size: 18px;
+                    }
+
+                    .download-button:hover .download-arrows {
+                        animation: downloadArrow 1s ease-in-out infinite;
+                    }
+
+                    .download-text {
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    .download-icons{
+                        position: relative;
+                        z-index: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 20px;
+                        height: 20px;
+                    }
+                        @media (max-width: 410px){
+                        .download-button{
+                            width: 50px!important;
+                        }
+        }
+                `}
+            </style>
+            <button
                 onClick={exportToExcel}
-                className="bg-secondary p-2 shadow-md"
-                style={{ 
-                    backgroundColor: "#00A04A", 
-                    display: "flex", 
-                    alignItems: "center", 
-                    gap: "8px", 
-                    borderRadius: "8px",
-                    marginRight: "10px",
-                    boxShadow: "0px 4px 12px rgba(0, 160, 74, 0.3)",
-                    color: "white",
-                    border: "none",
-                    padding: "12px 20px",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    fontSize: "16px",
-                    fontWeight: "600"
-                }}
-                onMouseOver={(e) => {
-                    e.target.style.backgroundColor = "#008A3D";
-                    e.target.style.transform = "translateY(-2px)";
-                    e.target.style.boxShadow = "0px 6px 16px rgba(0, 160, 74, 0.4)";
-                }}
-                onMouseOut={(e) => {
-                    e.target.style.backgroundColor = "#00A04A";
-                    e.target.style.transform = "translateY(0px)";
-                    e.target.style.boxShadow = "0px 4px 12px rgba(0, 160, 74, 0.3)";
-                }}
+                className="download-button"
             >
-                Download Excel Report
+                <span className="download-text"  style={{textWrap:"nowrap"}}>Excel Report</span>
+                <div className="download-icons">
+                    <span className="download-arrows">↓</span>
+                </div>
             </button>
         </div>
     );

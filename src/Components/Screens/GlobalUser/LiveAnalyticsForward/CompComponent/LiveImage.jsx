@@ -9,9 +9,9 @@ export const LiveImage = () => {
         <Col>
         <div style={{ width: '100%' }}>
             {/* Live Feed Container */}
-            <div className='p-3 mb-4'
+            <div className='p-2 mb-4'
                 style={{
-                    height: '490px',
+                    height: '460px',
                     background: '#141E2B',
                     border: '0.5px solid rgb(37, 37, 37)',
                     borderRadius: '12px',

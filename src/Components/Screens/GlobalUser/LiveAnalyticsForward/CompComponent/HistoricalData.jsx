@@ -11,9 +11,9 @@ const HistoricalDataChart = () => {
   const data = [
     { name: 'Jan', value: 100 },
     { name: 'Feb', value: 150 },
+    { name: 'Mar', value: 200 },
     { name: 'Apr', value: 200 },
     { name: 'May', value: 350 },
-    { name: 'Man', value: 300 },
     { name: 'Jun', value: 340 },
     { name: 'Jul', value: 340 },
     { name: 'Aug', value: 340 },
@@ -38,7 +38,6 @@ const HistoricalDataChart = () => {
   };
 
   return (
-
     <Container fluid>
       <Row>
         <Col>
@@ -48,66 +47,74 @@ const HistoricalDataChart = () => {
             borderRadius: '12px',
             boxShadow: '0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.6)'
           }}>
-            <CardBody style={{ padding: '30px' }}>
+            <CardBody style={{ padding: '15px' }}>
               {/* Header */}
               <div style={{
                 display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
+                flexDirection: 'column',
+                gap: '15px',
                 marginBottom: '30px'
               }}>
-                <h5 style={{
-                  color: '#b0b8c1',
-                  fontSize: '1.4rem',
-                  fontWeight: 500,
-                  letterSpacing: '1px',
-                  fontFamily: 'Inter, sans-serif',
-                  marginBottom: '15px',
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '10px'
                 }}>
-                  HISTORICAL DATA
-                </h5>
-
-                <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                  <DropdownToggle
-                    caret
-                    style={{
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      color: '#FFFFFF',
-                      fontSize: '14px',
-                      padding: '8px 16px',
-                      borderRadius: '4px',
-                      minWidth: '130px',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    {selectedArticle}
-                  </DropdownToggle>
-                  <DropdownMenu style={{
-                    backgroundColor: '#252830',
-                    border: '1px solid #3a3f4b',
-                    borderRadius: '4px'
+                  <h5 style={{
+                    color: '#b0b8c1',
+                    fontSize: window.innerWidth <= 768 ? '1.2rem' : '1.4rem',
+                    fontWeight: 500,
+                    letterSpacing: '1px',
+                    fontFamily: 'Inter, sans-serif',
+                    marginBottom: '0',
                   }}>
-                    <DropdownItem
-                      onClick={() => setSelectedArticle('Article name')}
+                    HISTORICAL DATA
+                  </h5>
+
+                  <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                    <DropdownToggle
+                      caret
                       style={{
+                        backgroundColor: 'transparent',
+                        border: 'none',
                         color: '#FFFFFF',
-                        backgroundColor: 'transparent'
+                        fontSize: '14px',
+                        padding: '8px 16px',
+                        borderRadius: '4px',
+                        minWidth: '130px',
+                        whiteSpace: 'nowrap',
                       }}
                     >
-                      Article name
-                    </DropdownItem>
-                    <DropdownItem
-                      onClick={() => setSelectedArticle('Another article')}
-                      style={{
-                        color: '#FFFFFF',
-                        backgroundColor: 'transparent'
-                      }}
-                    >
-                      Another article
-                    </DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
+                      {selectedArticle}
+                    </DropdownToggle>
+                    <DropdownMenu style={{
+                      backgroundColor: '#252830',
+                      border: '1px solid #3a3f4b',
+                      borderRadius: '4px'
+                    }}>
+                      <DropdownItem
+                        onClick={() => setSelectedArticle('Article name')}
+                        style={{
+                          color: '#FFFFFF',
+                          backgroundColor: 'transparent'
+                        }}
+                      >
+                        Article name
+                      </DropdownItem>
+                      <DropdownItem
+                        onClick={() => setSelectedArticle('Another article')}
+                        style={{
+                          color: '#FFFFFF',
+                          backgroundColor: 'transparent'
+                        }}
+                      >
+                        Another article
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </div>
               </div>
 
               {/* Checkbox */}
@@ -127,67 +134,90 @@ const HistoricalDataChart = () => {
                       accentColor: '#4ECDC4'
                     }}
                   />
-                  Anoird
+                  Android
                 </label>
               </div>
 
-              {/* Chart */}
-              <div style={{ height: '300px', width: '100%' }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
-                    data={data}
-                    margin={{
-                      top: 20,
-                      right: 30,
-                      left: 20,
-                      bottom: 20,
-                    }}
-                  >
-                    <XAxis
-                      dataKey="name"
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{
-                        fill: '#8892b0',
-                        fontSize: 12,
-                        fontWeight: '400'
+              {/* Chart Container with Horizontal Scroll */}
+              <div style={{ 
+                width: '100%',
+                overflowX: 'auto',
+                overflowY: 'hidden'
+              }}>
+                <div style={{ 
+                  minWidth: '600px',
+                  height: window.innerWidth <= 768 ? '250px' : '300px',
+                  width: '100%'
+                }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart
+                      data={data}
+                      margin={{
+                        top: 20,
+                        right: 30,
+                        left: 20,
+                        bottom: 20,
                       }}
-                      dy={10}
-                    />
-                    <YAxis
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{
-                        fill: '#8892b0',
-                        fontSize: 12,
-                        fontWeight: '400'
-                      }}
-                      domain={[0, 400]}
-                      ticks={[0, 100, 200, 300, 400]}
-                      dx={-10}
-                    />
-                    <Line
-                      type="linear"
-                      dataKey="value"
-                      stroke="#4ECDC4"
-                      strokeWidth={2}
-                      dot={<CustomDot />}
-                      activeDot={{
-                        r: 6,
-                        fill: '#4ECDC4',
-                        stroke: '#4ECDC4',
-                        strokeWidth: 2
-                      }}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
+                    >
+                      <XAxis
+                        dataKey="name"
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{
+                          fill: '#8892b0',
+                          fontSize: window.innerWidth <= 768 ? 10 : 12,
+                          fontWeight: '400'
+                        }}
+                        dy={10}
+                        interval={0}
+                      />
+                      <YAxis
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{
+                          fill: '#8892b0',
+                          fontSize: window.innerWidth <= 768 ? 10 : 12,
+                          fontWeight: '400'
+                        }}
+                        domain={[0, 400]}
+                        ticks={[0, 100, 200, 300, 400]}
+                        dx={-10}
+                      />
+                      <Line
+                        type="linear"
+                        dataKey="value"
+                        stroke="#4ECDC4"
+                        strokeWidth={2}
+                        dot={<CustomDot />}
+                        activeDot={{
+                          r: 6,
+                          fill: '#4ECDC4',
+                          stroke: '#4ECDC4',
+                          strokeWidth: 2
+                        }}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+                
+                {/* Mobile Scroll Indicator */}
+                {window.innerWidth <= 768 && (
+                  <div style={{
+                    textAlign: 'center',
+                    fontSize: '11px',
+                    color: '#6b7280',
+                    marginTop: '10px',
+                    marginBottom:"5px"
+                  }}>
+                    Scroll horizontally to see all months →
+                  </div>
+                )}
               </div>
             </CardBody>
           </Card>
         </Col>
       </Row>
     </Container>
-
   );
 };
 

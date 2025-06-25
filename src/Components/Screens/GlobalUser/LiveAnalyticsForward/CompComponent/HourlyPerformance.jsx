@@ -49,7 +49,7 @@ const HourlyPerformance = () => {
         </div>
         
         {/* Chart Container */}
-        <div style={{ position: 'relative', width: '255px', height: '260px' }}>
+        <div style={{ position: 'relative', width: '250px', height: '260px' }}>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie

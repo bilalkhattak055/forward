@@ -8,6 +8,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import download from './asset/download.svg';
 import ExcelReport from './Reports/ExcelReport';
+import PDFReport from './Reports/PDFReport';
 
 const Graphs = () => {
   const [exporting, setExporting] = useState(false);
@@ -97,8 +98,10 @@ const Graphs = () => {
   };
 
   return (
+    <>
+    
     <WeekFilterProvider>
-      <Row className='pt-4'>
+      <Row className='pt-5 '>
         <Col xs={12}>
           <ModelAnalyticsHeader
             heading="Live Results"
@@ -117,9 +120,10 @@ const Graphs = () => {
           />
         </Col>
       </Row>
-      <div className="mb-1 " style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
+      <div className="mb-1 btn-ali" style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
         <ExcelReport />
-        <Button 
+        <PDFReport />
+        {/*<Button 
           className="bg-secondary p-2 shadow-md"
           onClick={exportToPDF}
           disabled={loading || exporting}
@@ -136,7 +140,7 @@ const Graphs = () => {
               Download PDF Report
             </>
           )}
-        </Button>
+        </Button>**/}
       </div>
 
       {/* ✅ Wrap charts with ref */}
@@ -155,6 +159,7 @@ const Graphs = () => {
         </Row>
       </div>
     </WeekFilterProvider>
+    </>
   );
 };
 
